@@ -5,8 +5,7 @@ function LandingPage() {
   return (
     <div>
       <h1>Welcome to Your Fitness App</h1>
-      
-      {/* Add Login and Signup buttons with Link components */}
+    
       <div>
         <Link to="/login">
           <button className="btn btn-primary">Login</button>
@@ -15,8 +14,7 @@ function LandingPage() {
           <button className="btn btn-success">Signup</button>
         </Link>
       </div>
-      
-      {/* Other content for your landing page */}
+    
     </div>
   );
 }
