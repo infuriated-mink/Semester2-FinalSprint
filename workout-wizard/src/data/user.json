@@ -1,0 +1,15 @@
+{
+    "user1@keyin.com": {
+      "password": "password1",
+      "firstName": "John"
+    },
+    "user2": {
+      "password": "password2",
+      "firstName": "Alice"
+    },
+    "user3": {
+      "password": "password3",
+      "firstName": "Bob"
+    }
+  }
+  
