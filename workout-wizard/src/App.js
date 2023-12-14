@@ -1,11 +1,11 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
-import LandingPage from './components/landingpage';
+import LandingPage from './Pages/landingpage';
 import LoginPage from './components/login';
 import SignupPage from './components/signup';
-import MainPage from './components/mainpage';
-import ProfilePage from './components/profile';
+import MainPage from './Pages/mainpage';
+import ProfilePage from './Pages/profile';
 import './App.css';
 
 function App() {
