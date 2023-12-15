@@ -1,13 +1,61 @@
-body {
+@import url("https://fonts.googleapis.com/css2?family=Karantina&family=Poppins:wght@100&display=swap");
+
+* {
+  font-family: "Karantina";
+  box-sizing: border-box;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.header-class {
+  display: flex;
+  border: 1px solid #81cde5;
+  background-color: rgb(245, 245, 245);
+  height: 120px;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  box-shadow: 0px 0px 10px #888888;
+}
+
+.logo-img {
+  border: 1px solid #81cde5;
+  height: 110px;
+  width: 110px;
+}
+
+.sloganText {
+  font-size: 18px;
+}
+
+.profile-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profile-img {
+  margin-bottom: 20px;
+}
+
+.icon-class {
+  /* border: 1px dotted black; */
+  height: 20px;
+  width: 20px;
+  /* margin-top: 40px; */
+  margin-right: 15px;
+}
+
+.icons-div {
+  display: flex;
+  justify-content: right;
+  /* margin-bottom: 40px; */
 }
