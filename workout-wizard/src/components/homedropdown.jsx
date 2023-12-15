@@ -73,7 +73,7 @@ const HomeDropdown = () => {
         <li>
           <button className="dropdown-item" type="button" onClick={handleLogout}>
             Logout
-          </button>
+          </button> 
         </li>
       </ul>
     </div>

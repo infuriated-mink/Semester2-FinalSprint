@@ -49,7 +49,7 @@ const ProfileDropdown = () => {
         aria-expanded="false"
       >
         <img
-          src="https://example.com/profile-picture.jpg"  // Replace with your profile picture URL
+          src="https://example.com/profile-picture.jpg"  
           alt="Profile"
           width="32"
           height="32"
