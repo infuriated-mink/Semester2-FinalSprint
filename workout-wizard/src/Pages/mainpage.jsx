@@ -1,4 +1,3 @@
-// MainPage.js
 import React, { useState } from 'react';
 import { Button } from 'react-bootstrap';
 import ExerciseModal from '../components/ExerciseModal';
@@ -15,6 +14,12 @@ function MainPage() {
     setIsModalOpen(false);
   };
 
+  const handleAddExercise = (selectedExercises, reps, sets) => {
+    // Implement the logic to add exercises to the main page
+    console.log("Adding exercises to main page:", selectedExercises, reps, sets);
+    // Add your logic here
+  };
+
   return (
     <div>
       <h1>Main Page</h1>
@@ -24,7 +29,7 @@ function MainPage() {
         Add Exercise
       </Button>
 
-      <ExerciseModal isOpen={isModalOpen} onClose={closeModal} />
+      <ExerciseModal isOpen={isModalOpen} onClose={closeModal} onAddExercise={handleAddExercise} />
     </div>
   );
 }
