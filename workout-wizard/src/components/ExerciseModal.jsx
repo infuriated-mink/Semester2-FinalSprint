@@ -1,127 +1,132 @@
-import React, { useState, useEffect } from 'react';
-import { Modal, Button } from 'react-bootstrap';
+import React, { useState, useEffect } from "react";
+import $ from "jquery";
+import { Modal, Button, ButtonGroup } from "react-bootstrap";
 
-const ExerciseModal = ({ isOpen, onClose }) => {
-  const [exercises, setExercises] = useState([]);
-  const [filteredExercises, setFilteredExercises] = useState([]);
-  const [selectedMuscleGroup, setSelectedMuscleGroup] = useState('');
-  const [selectedDifficulty, setSelectedDifficulty] = useState('');
-  const apiKey = ''; 
+const ExerciseModal = () => {
+  const [results, setResults] = useState([]);
+  const [selectedMuscle, setSelectedMuscle] = useState(null);
+  const [level, setLevel] = useState("beginner");
+  const [buildType, setBuildType] = useState(null);
+  const [show, setShow] = useState(false);
 
-  useEffect(() => {
-    const fetchExercises = async () => {
-      try {
-        const response = await fetch('https://api-ninjas.com/api/exercises', {
-          headers: {
-            Authorization: `Bearer ${apiKey}`,
-          },
-        });
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
-        if (!response.ok) {
-          throw new Error(`HTTP error! Status: ${response.status}`);
-        }
-
-        const data = await response.json();
-        setExercises(data);
-        setFilteredExercises(data); // Initialize with all exercises
-      } catch (error) {
-        console.error('Error fetching exercises:', error);
-      }
-    };
-
-    fetchExercises();
-  }, [apiKey]);
-
-  const filterExercisesByMuscleGroup = (muscleGroup) => {
-    if (muscleGroup === 'all') {
-      setFilteredExercises(exercises);
-    } else {
-      const filtered = exercises.filter(exercise => exercise.category === muscleGroup);
-      setFilteredExercises(filtered);
-    }
-    setSelectedMuscleGroup(muscleGroup);
-    console.log('Selected Muscle Group:', muscleGroup);
+  const muscleGroups = {
+    Arms: ["biceps", "triceps", "forearms"],
+    Legs: ["quadriceps", "hamstrings", "calves"],
+    Chest: ["chest"],
+    Back: ["lats", "lower_back", "middle_back", "traps"],
+    Core: ["abdominals"],
+    Cardio: ["cardio"],
   };
 
-  const handleDifficultySelect = async (difficulty) => {
-    setSelectedDifficulty(difficulty);
-    console.log('Selected Difficulty:', difficulty);
+  const handleMuscleClick = (muscle) => {
+    setSelectedMuscle(muscle);
+  };
+
+  const handleBuildType = (type) => {
+    setBuildType(type);
+  };
+
+  const fetchData = async () => {
+    if (!selectedMuscle || !buildType) {
+      console.warn("Please select muscle group and build type.");
+      return;
+    }
 
     try {
-      const response = await fetch('https://api-ninjas.com/api/exercises', {
+      const result = await $.ajax({
+        method: "GET",
+        url: `https://api.api-ninjas.com/v1/exercises?muscle=${selectedMuscle}&difficulty=${level}`,
         headers: {
-          Authorization: `Bearer ${apiKey}`,
+          "X-Api-Key": "lcs+RYwfm+OWdQramu84vg==CX9KbOYJ7AH5YH7R",
         },
+        contentType: "application/json",
       });
-
-      if (!response.ok) {
-        throw new Error(`HTTP error! Status: ${response.status}`);
-      }
-
-      const data = await response.json();
-      console.log('API Results:', data); // Log the results from the API
-
-      // Filter exercises based on both muscle group and selected difficulty
-      const filtered = data.filter(exercise => exercise.category === selectedMuscleGroup && exercise.difficulty === difficulty);
-      setFilteredExercises(filtered);
+      setResults(result);
     } catch (error) {
-      console.error('Error fetching exercises:', error);
+      console.error("Error: ", error.responseText);
     }
   };
 
-  const renderMuscleGroupButtons = () => {
-    const muscleGroups = ['legs', 'core', 'back', 'chest', 'arms', 'cardio'];
-
-    return muscleGroups.map(group => (
-      <Button
-        key={group}
-        onClick={() => filterExercisesByMuscleGroup(group)}
-        variant={selectedMuscleGroup === group ? 'success' : 'primary'}
-      >
-        {group.charAt(0).toUpperCase() + group.slice(1)}
-      </Button>
-    ));
-  };
-
-  const renderDifficultyDropdown = () => {
-    const difficulties = ['beginner', 'intermediate', 'expert'];
-
-    return (
-      <div>
-        <label>Choose Difficulty:</label>
-        <select value={selectedDifficulty} onChange={(e) => handleDifficultySelect(e.target.value)}>
-          {difficulties.map(difficulty => (
-            <option key={difficulty} value={difficulty}>
-              {difficulty.charAt(0).toUpperCase() + difficulty.slice(1)}
-            </option>
-          ))}
-        </select>
-      </div>
-    );
-  };
+  useEffect(() => {
+    if (show && buildType) {
+      fetchData();
+    }
+  }, [show, selectedMuscle, level, buildType]);
 
   return (
-    <Modal show={isOpen} onHide={onClose}>
-      <Modal.Header closeButton>
-        <Modal.Title>Exercise Modal</Modal.Title>
-      </Modal.Header>
-      <Modal.Body>
-        <div>
-          {renderMuscleGroupButtons()}
-        </div>
-        {renderDifficultyDropdown()}
-        <ul>
-          {filteredExercises.map(exercise => (
-            <li key={exercise.id}>{exercise.name}</li>
-          ))}
-        </ul>
-      </Modal.Body>
-      <Modal.Footer>
-        <Button variant="secondary" onClick={onClose}>
-          Close
-        </Button>
-      </Modal.Footer>
-    </Modal>
+    <div>
+      <Button variant="primary" onClick={handleShow}>
+        Add Exercise
+      </Button>
+
+      <Modal show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>Exercise Modal</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <ButtonGroup>
+            {Object.keys(muscleGroups).map((category) => (
+              <Button
+                key={category}
+                variant={
+                  selectedMuscle &&
+                  muscleGroups[category].includes(selectedMuscle)
+                    ? "primary"
+                    : "secondary"
+                }
+                onClick={() =>
+                  handleMuscleClick(muscleGroups[category][0])
+                }
+              >
+                {category}
+              </Button>
+            ))}
+          </ButtonGroup>
+
+          <div>
+            <label>Level: </label>
+            <select value={level} onChange={(e) => setLevel(e.target.value)}>
+              <option value="beginner">Beginner</option>
+              <option value="intermediate">Intermediate</option>
+              <option value="expert">Expert</option>
+            </select>
+          </div>
+
+          <div>
+            <div>
+              <label>Build Type: </label>
+            </div>
+            <ButtonGroup>
+              <Button
+                variant={buildType === "build" ? "primary" : "secondary"}
+                onClick={() => handleBuildType("build")}
+              >
+                Build
+              </Button>
+              <Button
+                variant={buildType === "customize" ? "primary" : "secondary"}
+                onClick={() => handleBuildType("customize")}
+              >
+                Customize
+              </Button>
+            </ButtonGroup>
+          </div>
+
+          <div>
+            <h2>Results:</h2>
+            <pre>{JSON.stringify(results, null, 2)}</pre>
+          </div>
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleClose}>
+            Close
+          </Button>
+        </Modal.Footer>
+      </Modal>
+    </div>
   );
 };
 
