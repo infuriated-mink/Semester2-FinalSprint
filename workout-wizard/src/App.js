@@ -6,8 +6,9 @@ import LoginPage from './components/login';
 import SignupPage from './components/signup';
 import MainPage from './Pages/mainpage';
 import ProfilePage from './Pages/profile';
-import './App.css';
+import Home from './components/Home';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min';
 
 
 function App() {
