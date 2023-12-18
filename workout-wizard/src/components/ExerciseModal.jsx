@@ -9,8 +9,11 @@ const ExerciseModal = ({ isOpen, onClose, onAddExercise }) => {
   const [buildType, setBuildType] = useState(null);
   const [show, setShow] = useState(isOpen);
   const [selectedExercises, setSelectedExercises] = useState([]);
-  const [reps, setReps] = useState(10);
-  const [sets, setSets] = useState(3);
+  const [reps, setReps] = useState(null);
+  const [sets, setSets] = useState(null);
+  const [selectedDay, setSelectedDay] = useState(null);
+  const [buildReps, setBuildReps] = useState(null);
+  const [buildSets, setBuildSets] = useState(null);
 
   const handleClose = () => {
     setShow(false);
@@ -18,8 +21,11 @@ const ExerciseModal = ({ isOpen, onClose, onAddExercise }) => {
     setLevel('beginner');
     setBuildType(null);
     setSelectedExercises([]);
-    setReps(10);
-    setSets(3);
+    setReps(null);
+    setSets(null);
+    setSelectedDay(null);
+    setBuildReps(null);
+    setBuildSets(null);
     onClose();
   };
 
@@ -29,8 +35,11 @@ const ExerciseModal = ({ isOpen, onClose, onAddExercise }) => {
     setLevel('beginner');
     setBuildType(null);
     setSelectedExercises([]);
-    setReps(10);
-    setSets(3);
+    setReps(null);
+    setSets(null);
+    setSelectedDay(null);
+    setBuildReps(null);
+    setBuildSets(null);
   };
 
   const muscleGroups = {
@@ -57,34 +66,38 @@ const ExerciseModal = ({ isOpen, onClose, onAddExercise }) => {
   };
 
   const handleCustomizeAdd = () => {
-    if (selectedExercises.length < 1) {
-      console.warn('Please select at least one exercise.');
+    if (selectedExercises.length < 1 || reps === null || sets === null || selectedDay === null) {
+      console.warn('Please fill in all fields for Customize.');
       return;
     }
 
-    // Log selected exercises with reps and sets
-    console.log('Selected Exercises:', selectedExercises);
-    console.log('Reps:', reps);
-    console.log('Sets:', sets);
+    // Log selected exercises with reps, sets, and selected day
+    console.log('Selected Exercises (Customize):', selectedExercises);
+    console.log('Reps (Customize):', reps);
+    console.log('Sets (Customize):', sets);
+    console.log('Selected Day:', selectedDay);
 
     // Add exercises to main page
-    onAddExercise(selectedExercises, reps, sets);
+    onAddExercise(selectedExercises, reps, sets, selectedDay);
 
     // Reset selections
     handleClose();
   };
 
   const handleBuildAdd = () => {
-    if (selectedExercises.length !== 4) {
-      console.warn('Please select exactly four exercises for Build.');
+    if (selectedExercises.length !== 4 || buildReps === null || buildSets === null || selectedDay === null) {
+      console.warn('Please fill in all fields for Build.');
       return;
     }
 
     // Log selected exercises for Build
     console.log('Selected Exercises (Build):', selectedExercises);
+    console.log('Reps (Build):', buildReps);
+    console.log('Sets (Build):', buildSets);
+    console.log('Selected Day:', selectedDay);
 
     // Add exercises to main page
-    onAddExercise(selectedExercises, reps, sets);
+    onAddExercise(selectedExercises, buildReps, buildSets, selectedDay);
 
     // Reset selections
     handleClose();
@@ -161,6 +174,19 @@ const ExerciseModal = ({ isOpen, onClose, onAddExercise }) => {
           </ButtonGroup>
 
           <div>
+            <label>Day of the Week: </label>
+            <select value={selectedDay} onChange={(e) => setSelectedDay(e.target.value)}>
+              <option value="Monday">Monday</option>
+              <option value="Tuesday">Tuesday</option>
+              <option value="Wednesday">Wednesday</option>
+              <option value="Thursday">Thursday</option>
+              <option value="Friday">Friday</option>
+              <option value="Saturday">Saturday</option>
+              <option value="Sunday">Sunday</option>
+            </select>
+          </div>
+
+          <div>
             <label>Level: </label>
             <select value={level} onChange={(e) => setLevel(e.target.value)}>
               <option value="beginner">Beginner</option>
@@ -189,7 +215,7 @@ const ExerciseModal = ({ isOpen, onClose, onAddExercise }) => {
             </ButtonGroup>
           </div>
 
-          {buildType === 'customize' && (
+          {buildType && (
             <div>
               <div>
                 <h3>Select Exercises:</h3>
@@ -210,38 +236,23 @@ const ExerciseModal = ({ isOpen, onClose, onAddExercise }) => {
                 <label>Reps: </label>
                 <input
                   type="number"
-                  value={reps}
-                  onChange={(e) => setReps(e.target.value)}
+                  value={buildType === 'customize' ? reps : buildReps}
+                  onChange={(e) => (buildType === 'customize' ? setReps(e.target.value) : setBuildReps(e.target.value))}
                 />
               </div>
+
               <div>
                 <label>Sets: </label>
                 <input
                   type="number"
-                  value={sets}
-                  onChange={(e) => setSets(e.target.value)}
+                  value={buildType === 'customize' ? sets : buildSets}
+                  onChange={(e) => (buildType === 'customize' ? setSets(e.target.value) : setBuildSets(e.target.value))}
                 />
               </div>
 
-              <Button variant="primary" onClick={handleCustomizeAdd}>
+              <Button variant="primary" onClick={() => (buildType === 'customize' ? handleCustomizeAdd() : handleBuildAdd())}>
                 Add Exercises
               </Button>
-            </div>
-          )}
-
-          {buildType === 'build' && (
-            <div>
-              <div>
-                <h3>Generated Exercises:</h3>
-                {selectedExercises.map((result) => (
-                  <div key={result.id}>
-                    {result.name}
-                  </div>
-                ))}
-                <Button variant="primary" onClick={handleBuildAdd}>
-                  Add Exercises
-                </Button>
-              </div>
             </div>
           )}
         </Modal.Body>
