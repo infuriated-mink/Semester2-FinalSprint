@@ -1,13 +1,14 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import "bootstrap/dist/css/bootstrap.min.css";
-import LandingPage from "./components/landingpage";
-import LoginPage from "./components/login";
-import SignupPage from "./components/signup";
-import Home from "./components/Home";
-import ProfilePage from "./components/profile";
-
 import "./App.css";
+import LandingPage from './Pages/landingpage';
+import LoginPage from './components/login';
+import SignupPage from './components/signup';
+import MainPage from './Pages/mainpage';
+import ProfilePage from './Pages/profile';
+import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 function App() {
   return (

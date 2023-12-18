@@ -1,24 +1,40 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
-export default function Signup() {
+const Signup = () => {
   const navigate = useNavigate();
   const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const handleSignup = () => {
-    // Log signup information to console
-    console.log("Full Name:", fullName);
-    console.log("Email:", email);
-    console.log("Password:", password);
+    // Load existing user data from userData in local storage
+    const existingUserData = localStorage.getItem("userData");
+    let userData = existingUserData ? JSON.parse(existingUserData) : { users: [] };
 
-    // Save signup information to local storage
-    const userData = { fullName, email, password };
-    localStorage.setItem("userData", JSON.stringify(userData));
+    // Check if the email already exists
+    const existingUser = userData.users.find((user) => user.email === email);
 
-    // Navigate to the login page after signup
-    navigate("/login");
+    if (existingUser) {
+      // Email already exists, handle accordingly (show error, etc.)
+      console.log("Email already exists");
+    } else {
+      // Email does not exist, add new user
+      const newUser = {
+        fullName,
+        email,
+        password,
+      };
+
+      // Add the new user to the users array
+      userData.users.push(newUser);
+
+      // Save updated user data to local storage
+      localStorage.setItem("userData", JSON.stringify(userData));
+
+      // Navigate to the login page after signup
+      navigate("/login");
+    }
   };
 
   return (
@@ -78,4 +94,6 @@ export default function Signup() {
       </form>
     </div>
   );
-}
+};
+
+export default Signup;

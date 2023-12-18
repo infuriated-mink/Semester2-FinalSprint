@@ -8,14 +8,31 @@ export default function Login() {
   const [loginError, setLoginError] = useState("");
 
   const handleLogin = () => {
-    const isLoginSuccessful = true;
-
-    if (isLoginSuccessful) {
-      // Navigate to the main page after successful login
-      navigate("/main");
+    // Retrieve user data from local storage
+    const storedUserData = localStorage.getItem("userData");
+  
+    // Check if user data is available
+    if (storedUserData) {
+      const userData = JSON.parse(storedUserData);
+  
+      // Find the user based on the entered email
+      const user = userData.users.find(u => u.email === email);
+  
+      if (user && user.password === password) {
+        // Successful login
+  
+        // Store the current user's email in local storage
+        localStorage.setItem("loggedInUserEmail", email);
+  
+        // After successful login, navigate to the main page
+        navigate("/main");
+      } else {
+        // Incorrect email or password
+        setLoginError("Incorrect email or password");
+      }
     } else {
-      // Handle login error
-      setLoginError("Incorrect email or password");
+      // User data not found
+      setLoginError("User not found");
     }
   };
 
