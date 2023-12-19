@@ -13,6 +13,11 @@ p {
   margin: 0;
 }
 
+hr {
+  width: 100%;
+  color: white;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -70,11 +75,11 @@ body {
 }
 
 .add-button-big {
-  border: 1px dotted black;
-  padding: 20px;
+  border: none;
   border-radius: 40px;
   margin: 40px 10px 0px 5px;
-  max-height: 62px;
+  height: 60px;
+  width: 60px;
   box-shadow: 0px 4px 3px #888888;
 }
 
@@ -135,6 +140,7 @@ body {
   font-size: 16pt;
   font-weight: bold;
   text-align: center;
+  padding-top: 20px;
 }
 
 .sm-card-flex {
@@ -147,6 +153,7 @@ body {
   font-family: "Inter";
   font-size: 12px;
   margin-left: 5px;
+  margin-top: 15px;
 }
 
 .sm-card-right-side {
@@ -157,11 +164,21 @@ body {
 }
 
 .sm-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(245, 245, 245);
   height: 20px;
   width: 20px;
   margin-right: 10px;
   padding: 5px;
-  border: 1px dotted black;
   border-radius: 40px;
+  border: none;
+  border-radius: 50%;
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.381);
+}
+
+.sm-btn img {
+  width: 100%;
+  height: auto;
 }

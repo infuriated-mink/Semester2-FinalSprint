@@ -6,6 +6,7 @@ import xImg from "../images/twitter.png";
 import instaImg from "../images/instagram.png";
 import youTube from "../images/youtube.png";
 import pinterest from "../images/pinterest.png";
+import ProfileDropdown from "./profiledropdown";
 
 const Header = () => {
   return (
@@ -21,12 +22,7 @@ const Header = () => {
           it means to."
         </p>
         <div className="profile-container">
-          <img
-            src={profilePic}
-            alt="pic"
-            width="50px"
-            className="profile-img"
-          />
+          <ProfileDropdown />
           <div className="icons-div">
             <img
               src={fbImg}
