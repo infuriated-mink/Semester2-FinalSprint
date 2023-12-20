@@ -1,0 +1,16 @@
+.mainBoxStore {
+    width: flex;
+    flex-direction: column;
+    height: 1204px;
+    background: #FFF;
+}
+
+.pageUnderCon {
+    width: flex;
+    flex-direction: column;
+    height: 840px;
+    background:  rgb(245, 245, 245);
+    border-radius: 15px;
+    align-items: center;
+    margin: 25px;
+};
