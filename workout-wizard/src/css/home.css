@@ -1,0 +1,184 @@
+@import url("https://fonts.googleapis.com/css2?family=Karantina&family=Poppins:wght@100&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Inter&family=Karantina&family=Poppins:wght@100&display=swap");
+
+* {
+  font-family: "Karantina";
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+p {
+  margin: 0;
+}
+
+hr {
+  width: 100%;
+  color: white;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.header-class {
+  display: flex;
+  border: 1px solid #81cde5;
+  background-color: rgb(245, 245, 245);
+  height: 120px;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  box-shadow: 0px 0px 10px #888888;
+  min-width: 1000px;
+}
+
+.logo-img {
+  border: 1px solid #81cde5;
+  border-bottom-left-radius: 15px;
+  height: 110px;
+  width: 110px;
+  margin-left: 5px;
+}
+
+.sloganText {
+  font-size: 22px;
+}
+
+.profile-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profile-img {
+  margin-bottom: 20px;
+}
+
+.icon-class {
+  /* border: 1px dotted black; */
+  height: 20px;
+  width: 20px;
+  /* margin-top: 40px; */
+  margin-right: 15px;
+}
+
+.icons-div {
+  display: flex;
+  justify-content: right;
+  /* margin-bottom: 40px; */
+}
+
+.add-button-big {
+  border: none;
+  border-radius: 40px;
+  margin: 40px 10px 0px 5px;
+  height: 60px;
+  width: 60px;
+  box-shadow: 0px 4px 3px #888888;
+}
+
+.body-flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  min-width: 1000px;
+}
+
+.calendar-section-left {
+  font-family: "Inter";
+  background-color: rgb(245, 245, 245);
+  width: 150px;
+  height: 800px;
+  margin: 40px 0px;
+  border-top: 1px solid #81cde5;
+  border-right: 1px solid gray;
+  border-bottom: 1px solid #81cde5;
+  border-left: 1px solid #81cde5;
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;
+}
+
+.calendar-section-mid {
+  font-family: "Inter";
+  background-color: rgb(245, 245, 245);
+  width: 150px;
+  height: 800px;
+  margin: 40px 0px;
+  border-top: 1px solid #81cde5;
+  border-right: 1px solid gray;
+  border-bottom: 1px solid #81cde5;
+}
+
+.calendar-section-right {
+  font-family: "Inter";
+  background-color: rgb(245, 245, 245);
+  width: 150px;
+  height: 800px;
+  margin: 40px 10px 40px 0px;
+  border-top: 1px solid #81cde5;
+  border-right: 1px solid #81cde5;
+  border-bottom: 1px solid #81cde5;
+  border-top-right-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
+
+.font-size-12 {
+  font-family: "Inter";
+  font-size: 12pt;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.font-size-16B {
+  font-family: "Inter";
+  font-size: 16pt;
+  font-weight: bold;
+  text-align: center;
+  padding-top: 20px;
+}
+
+.sm-card-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sm-card-font {
+  font-family: "Inter";
+  font-size: 12px;
+  margin-left: 5px;
+  margin-top: 15px;
+}
+
+.sm-card-right-side {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sm-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(245, 245, 245);
+  height: 20px;
+  width: 20px;
+  margin-right: 10px;
+  padding: 5px;
+  border-radius: 40px;
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.381);
+}
+
+.sm-btn img {
+  width: 100%;
+  height: auto;
+}
