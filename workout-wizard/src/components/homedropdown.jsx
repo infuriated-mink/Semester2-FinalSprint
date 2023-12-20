@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import '../css'
+import '../css/homedropdown.css'
 
 const HomeDropdown = () => {
   const navigate = useNavigate();
