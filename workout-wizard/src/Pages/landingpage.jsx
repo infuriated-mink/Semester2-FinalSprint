@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import userData from '../data/user.json'; 
 import '../css/landingpage.css';
+import workoutWizard from '../images/mohammad.png';
 
 function LandingPage() {
   // useEffect will run once when the component mounts
@@ -14,7 +15,12 @@ function LandingPage() {
   }, []);
 
   return (
-    <div>
+    <div className="header-class">
+     <img 
+       src={workoutWizard} 
+       alt="workout wizard img"
+       className="logo-img" 
+     />
       <div className="header-box">
         <h1 className="header-class">"A fit body is never late, nor is it early, it arrives precisely when it means to."</h1>
         <div className="header-classimg"></div>
