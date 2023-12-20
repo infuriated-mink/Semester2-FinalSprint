@@ -6,6 +6,7 @@ import LoginPage from './components/login';
 import SignupPage from './components/signup';
 import MainPage from './Pages/mainpage';
 import ProfilePage from './Pages/profile';
+import storePage from './Pages/store';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -19,6 +20,7 @@ function App() {
         <Route path="/signup" element={<SignupPage />} />
         <Route path="/main" element={<MainPage />} />
         <Route path="/profile" element={<ProfilePage />} />
+        <Route path="/store" element={<Store />} />
       </Routes>
     </Router>
   );

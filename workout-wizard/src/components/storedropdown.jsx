@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import '../css'
 
-const HomeDropdown = () => {
+const StoreDropdown = () => {
   const navigate = useNavigate();
   const [fullName, setFullName] = useState('');
 
@@ -27,17 +26,17 @@ const HomeDropdown = () => {
     }
   }, []);
 
-  const handleHomeClick = () => {
-    // Navigate to the main page
-    navigate('/main');
+  const handleProfileClick = () => {
+    // Navigate to the profile page
+    navigate('/profile');
   };
 
   const handleLogout = () => {
     // Clear the logged-in user's email from local storage
     localStorage.removeItem('loggedInUserEmail');
     
-    // Navigate back to the main page
-    navigate('/mainpage');
+    // Navigate back to the landing page
+    navigate('/');
   };
 
   return (
@@ -50,7 +49,7 @@ const HomeDropdown = () => {
         aria-expanded="false"
       >
         <img
-          src="https://example.com/profile-picture.jpg" 
+          src="https://example.com/profile-picture.jpg"  
           alt="Profile"
           width="32"
           height="32"
@@ -62,23 +61,23 @@ const HomeDropdown = () => {
           <span className="dropdown-item">{fullName}</span>
         </li>
         <li>
-          <button className="dropdown-item" type="button" onClick={handleHomeClick}>
+          <button className="dropdown-item" type="button" onClick={handleProfileClick}>
+            Profile
+          </button>
+        </li>
+        <li>
+          <button className="dropdown-item" type="button" onClick={handleStoreClick}>
             Home
           </button>
         </li>
         <li>
-          <button className="dropdown-item" type="button">
-            Store
-          </button>
-        </li>
-        <li>
-          <button className="dropdownitemlog2" type="button" onClick={handleLogout}>
+          <button className="dropdownitemlog1" type="button" onClick={handleLogout}>
             Logout
-          </button> 
+          </button>
         </li>
       </ul>
     </div>
   );
 };
 
-export default HomeDropdown;
+export default StoreDropdown;
