@@ -5,7 +5,7 @@ import LandingPage from './Pages/landingpage';
 import LoginPage from './components/login';
 import SignupPage from './components/signup';
 import MainPage from './Pages/mainpage';
-import ProfilePage from './Pages/profile';
+import ProfilePage from './Pages/Profile';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
