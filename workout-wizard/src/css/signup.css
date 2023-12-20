@@ -1,0 +1,99 @@
+/* signup.css */
+
+@import url("https://fonts.googleapis.com/css2?family=Karantina&family=Poppins:wght@100&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Inter&family=Karantina&family=Poppins:wght@100&display=swap");
+
+
+
+.Auth-form-title {
+    font-size: 30px;
+    font-weight: 200;
+    font-family: "Karantina", sans-serif;
+    color: #3992AE;
+    font-size: 30px;
+    text-shadow: black;
+    font-weight: 500;
+}
+
+.Auth-form-container {
+    display: flex;
+    justify-content: center;
+    align-items: left;
+    height: 100vh;
+  }
+
+  .link-primary {
+    color: #81CDE5;
+  }
+  
+  .Auth-form {
+    width: 400px;
+    height: 500px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    border-color: #81CDE5;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .Auth-form-title {
+    text-align: center;
+  }
+  
+  .link-primary {
+    color: #dc3545;
+  }
+  
+  .mt-3 {
+    margin-bottom: 15px;
+    font-weight: bold;
+    font-size: 10px;
+  }
+  
+  .form-control {
+    width: 100%;
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .d-grid {
+    display: grid;
+  }
+  
+  .btn-primary1 {
+    background-color: #fff;
+    color: #3992AE;
+    border: 2px solid #81CDE5;
+    border-radius: 25px;
+    cursor: pointer;
+    border-color: #81CDE5;
+    font-family: "Karantina", sans-serif;
+    font-size: 30px;
+    font-weight: 500;
+    text-align: center;
+    padding-left: 20px;
+    padding-right: 20px;
+
+  }
+  
+  .btn-primary:hover {
+    background-color: #0056b3;
+  }
+  
+  .error-message {
+    color: #dc3545;
+  }
+  
+  .text-center {
+    text-align: center;
+  }
+
+  .butt {
+    margin-left: 80px;
+  }
+  
+  /* Add more styles as needed */
+  

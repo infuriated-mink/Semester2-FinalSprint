@@ -1,0 +1,18 @@
+/* Profile drop down */
+
+.dropdown-item {
+    border: 0.2px solid #81cde5;
+    border-radius: 7px;
+    text-align: center;
+    background-color: lightgray;
+}
+
+.dropdownitemlog {
+    border: 0.2px solid none;
+    border-radius: 10px;
+    text-align: center;
+    background-color: red;
+    color: white;
+    width: 160px;
+    height: 35px;
+}

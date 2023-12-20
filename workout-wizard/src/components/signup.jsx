@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import '../css/signup.css';
 
 const Signup = () => {
   const navigate = useNavigate();
@@ -49,7 +50,7 @@ const Signup = () => {
             </Link>
           </div>
           <div className="form-group mt-3">
-            <label>Full Name</label>
+            <label>Full Name:</label>
             <input
               type="text"
               className="form-control mt-1"
@@ -59,7 +60,7 @@ const Signup = () => {
             />
           </div>
           <div className="form-group mt-3">
-            <label>Email address</label>
+            <label>Email Address:</label>
             <input
               type="email"
               className="form-control mt-1"
@@ -69,7 +70,7 @@ const Signup = () => {
             />
           </div>
           <div className="form-group mt-3">
-            <label>Password</label>
+            <label>Password:</label>
             <input
               type="password"
               className="form-control mt-1"
@@ -78,18 +79,15 @@ const Signup = () => {
               onChange={(e) => setPassword(e.target.value)}
             />
           </div>
-          <div className="d-grid gap-2 mt-3">
+          <div className="butt">
             <button
               type="button"
-              className="btn btn-primary"
+              className="btn btn-primary1"
               onClick={handleSignup}
             >
               Submit
             </button>
           </div>
-          <p className="text-center mt-2">
-            Forgot <a href="#">password?</a>
-          </p>
         </div>
       </form>
     </div>
