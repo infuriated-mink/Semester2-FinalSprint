@@ -5,7 +5,8 @@ import LandingPage from './Pages/landingpage';
 import LoginPage from './components/login';
 import SignupPage from './components/signup';
 import MainPage from './Pages/mainpage';
-import ProfilePage from './Pages/Profile';
+import Store from './Pages/store';
+import ProfilePage from './Pages/profile';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -17,8 +18,9 @@ function App() {
         <Route path="/" element={<LandingPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/signup" element={<SignupPage />} />
-        <Route path="/main" element={<MainPage />} />
-        <Route path="/profile" element={<ProfilePage />} />
+        <Route path="/main" element={<Home />} />
+        <Route path="/profile" element={<ProfilePage />} /> 
+        <Route path="/store" element={<Store />} />
       </Routes>
     </Router>
   );

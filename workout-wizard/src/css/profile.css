@@ -1,0 +1,98 @@
+.mainBox {
+    width: flex;
+    flex-direction: column;
+    height: 1204px;
+    background: #FFF;
+}
+/*this is the css for the profile box*/
+.profileBox {
+    display: flex;
+    height: 3000px;
+    background: rgb(245, 245, 245);
+    border-radius: 15px;
+    border: 2px solid #81CDE5;
+    margin: 20px;
+    justify-content: center;
+    box-shadow: 0px 0px 10px #888888;
+}
+.columnProfile1 {
+    flex: 1;
+    flex-direction: column;
+    width: 100%;
+    padding: 0;
+    box-sizing: border-box;
+}
+.columnProfile2 {
+    flex-direction: column;
+    display: flex;
+    width: 100%;
+    box-sizing: border-box;
+}
+.profileYourNameBox {
+    width: flex;
+    height: 80px;
+}
+
+.fullNameText {    
+    text-align: center;
+    font-family: karatina;
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 400;}
+
+.profilePicBox {
+    justify-content: center;
+    align-self: center;
+    width: 360px;
+    height: 360px;
+    background: url;
+    border-radius: 360px;
+    border: 2px solid black;
+    margin-top: 20px;
+}
+
+.profileDescriptionBox {
+    width: 1000px;
+    height: 500px;
+    background: whitesmoke;
+    border-radius: 15px;
+    border: 2px solid #81CDE5;
+    margin-top: 20px;
+    justify-content: center;
+    align-self: center;
+    box-shadow: 0px 5px 5px 0px #888888;
+} 
+
+
+
+/* here is the css for the header and everyhting inside of it
+.headerBox {
+    width: 1416px;
+    height: 100px;
+    background: #81CDE5;
+    border-radius: 15px;
+    border: 2px solid #81CDE5;
+}
+
+.profilePicBox {
+    width: 80px;
+    height: 80px;
+    background: url;
+    border-radius: 80px;
+    border: 2px solid black;
+}
+
+.workoutWizardHeaderBox {
+    width: 175px;
+    height: 196px;
+    background: transparent;
+    fill: url();
+}
+
+.upperHalfHeaderBox {
+    width: 1157px;
+    height: 50px;
+    background: #81CDE5;
+    border-radius: 15px;
+    border: 2px solid #81CDE5;
+} */
