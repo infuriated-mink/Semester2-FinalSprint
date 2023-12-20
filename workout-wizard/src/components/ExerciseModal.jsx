@@ -9,11 +9,11 @@ const ExerciseModal = ({ isOpen, onClose, onAddExercise }) => {
   const [buildType, setBuildType] = useState(null);
   const [show, setShow] = useState(isOpen);
   const [selectedExercises, setSelectedExercises] = useState([]);
-  const [reps, setReps] = useState(null);
-  const [sets, setSets] = useState(null);
+  const [reps, setReps] = useState(0);
+  const [sets, setSets] = useState(0);
   const [selectedDay, setSelectedDay] = useState(null);
-  const [buildReps, setBuildReps] = useState(null);
-  const [buildSets, setBuildSets] = useState(null);
+  const [buildReps, setBuildReps] = useState(0);
+  const [buildSets, setBuildSets] = useState(0);
 
   const handleClose = () => {
     setShow(false);
