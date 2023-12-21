@@ -15,14 +15,11 @@ function LandingPage() {
   }, []);
 
   return (
-    <div className="header-class">
-     <img 
-       src={workoutWizard} 
-       alt="workout wizard img"
-       className="logo-img" 
-     />
+  <div className="pushitrealgood">
+    <div className="topbox">
+      {/* Header goes here */}
       <div className="header-box">
-        <h1 className="header-class">"A fit body is never late, nor is it early, it arrives precisely when it means to."</h1>
+
         <div className="header-classimg"></div>
       </div>
       <div>
@@ -38,7 +35,7 @@ function LandingPage() {
           <div className="what-we-offer"> What we offer:</div>
           <div className="list"> - Build custom workouts with our workout <br /> - keep track of your workouts with our workout tracker <br /> - Members get discounts on select Workout Wizard merchandise! <br /> - Tips and Tricks from the Workout Wizard himself. <br /><br /></div>
           <Link to="/signup">
-          <button className="btn-signup1">Sign Up</button>
+          <button className="btn-signup2">Sign Up</button>
         </Link>
         </div>
         <div className="bottom-box">
@@ -52,6 +49,7 @@ function LandingPage() {
         </div>
       </div>
     </div>
+  </div> 
   );
 }
 
