@@ -10,8 +10,6 @@ const ExerciseModal = ({ isOpen, onClose }) => {
   const [buildType, setBuildType] = useState(null);
   const [show, setShow] = useState(isOpen);
   const [selectedExercises, setSelectedExercises] = useState([]);
-  const [reps, setReps] = useState("");
-  const [sets, setSets] = useState("");
   const [selectedDay, setSelectedDay] = useState(null);
   const [buildReps, setBuildReps] = useState(null);
   const [buildSets, setBuildSets] = useState(null);
@@ -24,8 +22,6 @@ const ExerciseModal = ({ isOpen, onClose }) => {
     setLevel("beginner");
     setBuildType(null);
     setSelectedExercises([]);
-    setReps(null);
-    setSets(null);
     setSelectedDay(null);
     setBuildReps(null);
     setBuildSets(null);
@@ -93,8 +89,8 @@ const ExerciseModal = ({ isOpen, onClose }) => {
   const handleCustomizeAdd = () => {
     if (
       selectedExercises.length < 1 ||
-      reps === null ||
-      sets === null ||
+      buildReps === null ||
+      buildSets === null ||
       selectedDay === null
     ) {
       console.warn("Please fill in all fields for Customize.");
@@ -283,7 +279,7 @@ const ExerciseModal = ({ isOpen, onClose }) => {
     <div>
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Exercise Modal</Modal.Title>
+          <Modal.Title>Add Exercise</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <ButtonGroup>
@@ -385,10 +381,10 @@ const ExerciseModal = ({ isOpen, onClose }) => {
                 <label>Reps: </label>
                 <input
                   type="number"
-                  value={buildType === "customize" ? reps : buildReps}
+                  value={buildType === "customize" ? buildReps : buildReps}
                   onChange={(e) =>
                     buildType === "customize"
-                      ? setReps(e.target.value)
+                      ? setBuildReps(e.target.value)
                       : setBuildReps(e.target.value)
                   }
                 />
@@ -398,10 +394,10 @@ const ExerciseModal = ({ isOpen, onClose }) => {
                 <label>Sets: </label>
                 <input
                   type="number"
-                  value={buildType === "customize" ? sets : buildSets}
+                  value={buildType === "customize" ? buildSets : buildSets}
                   onChange={(e) =>
                     buildType === "customize"
-                      ? setSets(e.target.value)
+                      ? setBuildSets(e.target.value)
                       : setBuildSets(e.target.value)
                   }
                 />

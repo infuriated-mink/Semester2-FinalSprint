@@ -3,7 +3,7 @@ import lilCheck from "../images/little-check.png";
 import bigPlus from "../images/big-plus.png";
 import WorkoutModal from "./WorkoutModal";
 
-const CalCardSmall = ({ text, color }) => {
+const CalCardSmall = ({ text, color, exercises, sets, reps }) => {
   const [isCheckClicked, setIsCheckClicked] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -68,6 +68,9 @@ const CalCardSmall = ({ text, color }) => {
         onClose={closeModal}
         workoutType={text}
         color={color}
+        exercises={exercises}
+        buildSets={sets}
+        buildReps={reps}
       />
     </div>
   );

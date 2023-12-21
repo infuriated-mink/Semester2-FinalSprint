@@ -6,14 +6,11 @@ import AddModalButton from "./AddModalButton";
 
 function Home() {
   const [exerciseData, setExerciseData] = useState([]);
-  const muscleGroups = {
-    Arms: ["biceps", "triceps", "forearms"],
-    Legs: ["quadriceps", "hamstrings", "calves"],
-    Chest: ["chest"],
-    Back: ["lats", "lower_back", "middle_back", "traps"],
-    Core: ["abdominals"],
-    Cardio: ["cardio"],
-  };
+
+  // Retrieve existing data from local storage
+  const existingData = JSON.parse(localStorage.getItem("exerciseData")) || [];
+
+  console.log(existingData);
 
   function renderCalCardSmallComponents() {
     const schedule = {};
@@ -28,15 +25,30 @@ function Home() {
       schedule[selectedDay].push(data);
     });
 
-    // Render CalCardSmall components for each day
+    const colorMap = {
+      Chest: "#FF6347",
+      Back: "#6A5ACD",
+      Arms: "#FFD700",
+      Legs: "#0094FF",
+      Core: "#32CD32",
+    };
+
+    const colorStyle = (muscle) => {
+      return colorMap[muscle] || "#F900B3"; // Default color
+    };
+
+    // Inside the renderCalCardSmallComponents function
     return Object.keys(schedule).map((day) => (
       <div key={day} className="schedule-day">
         <p className="font-size-16B">{day}</p>
         {schedule[day].map((exercise, index) => (
           <CalCardSmall
             key={index}
-            text={exercise.selectedMuscle} // Assuming selectedMuscle is the relevant property
-            color={"lightgray"} // Replace with logic to map the selected muscle to its color
+            text={exercise.selectedMuscle}
+            color={colorStyle(exercise.selectedMuscle)}
+            exercises={exercise.exercises}
+            sets={exercise.buildSets}
+            reps={exercise.buildReps}
           />
         ))}
       </div>
