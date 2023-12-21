@@ -1,5 +1,11 @@
+<<<<<<< Updated upstream
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+=======
+import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import ProfilePic from "./ProfilePic";
+>>>>>>> Stashed changes
 
 const ProfileDropdown = () => {
   const navigate = useNavigate();
@@ -52,12 +58,21 @@ const ProfileDropdown = () => {
         data-bs-toggle="dropdown"
         aria-expanded="false"
       >
+<<<<<<< Updated upstream
         <img
           src="https://example.com/profile-picture.jpg"  
           alt="Profile"
           width="32"
           height="32"
           className="rounded-circle me-2"
+=======
+        <img 
+          src={'https://xsgames.co/randomusers/avatar.php?g=pixel'}
+          alt="Profile"
+          width="45px"
+          height="45px"
+          className="rounded-circle mb-3"
+>>>>>>> Stashed changes
         />
       </a>
       <ul className="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">

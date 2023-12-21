@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-const HomeDropdown = () => {
+const StoreDropdown = () => {
   const navigate = useNavigate();
   const [fullName, setFullName] = useState('');
 
@@ -53,7 +53,6 @@ const HomeDropdown = () => {
           alt="Profile"
           width="45px"
           height="45px"
-          margin-bottom="50px"
           className="rounded-circle me-2"
         />
       </a>
@@ -81,4 +80,4 @@ const HomeDropdown = () => {
   );
 };
 
-export default HomeDropdown;
+export default StoreDropdown;
