@@ -15,14 +15,11 @@ function LandingPage() {
   }, []);
 
   return (
-    <div className="header-class">
-     <img 
-       src={workoutWizard} 
-       alt="workout wizard img"
-       className="logo-img" 
-     />
+  <div className="pushitrealgood">
+    <div className="topbox">
+      {/* Header goes here */}
       <div className="header-box">
-        <h1 className="header-class">"A fit body is never late, nor is it early, it arrives precisely when it means to."</h1>
+
         <div className="header-classimg"></div>
       </div>
       <div>
@@ -52,6 +49,7 @@ function LandingPage() {
         </div>
       </div>
     </div>
+  </div> 
   );
 }
 

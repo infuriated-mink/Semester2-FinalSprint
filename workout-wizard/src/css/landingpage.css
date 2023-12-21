@@ -9,21 +9,20 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  width: auto;
+}
+
+.pushitrealgood {
+    max-width: 200px;
 }
 
 p {
   margin: 0;
 }
 
-body {
-  margin: 0;
-  padding: 0;
+.topbox {
   display: flex;
   flex-direction: column;
-}
-
-.header-box {
-    display: flex;
   border: 1px solid #81cde5;
   background-color: rgb(245, 245, 245);
   height: 120px;
