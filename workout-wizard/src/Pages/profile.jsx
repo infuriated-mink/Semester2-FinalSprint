@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Header from "../components/Header.jsx";
 import "../css/profile.css";
 import { useNavigate } from 'react-router-dom';
+import ProfileDescription from '../components/ProfileDescription';
 
 
     function ProfilePage() {
@@ -34,9 +35,15 @@ import { useNavigate } from 'react-router-dom';
           <div className='profileBox'>
           <div className='columnProfile1'></div>
             <div className='columnProfile2'>
-            <div className='profilePicBox'></div>
+            <div className='profilePicBox'><img 
+          src={'https://xsgames.co/randomusers/avatar.php?g=pixel'}
+          alt="Profile"
+          width="355px"
+          height="355px"
+          className="rounded-circle me-2"
+        /></div>
             <div className='profilYourNameBox'><p className='fullNameText'>{fullName}</p></div>
-            <div className='profileDescriptionBox'></div>
+            <div className='profileDescriptionBox'><ProfileDescription /></div>
             </div>
             <div className='columnProfile1'></div>
           </div>

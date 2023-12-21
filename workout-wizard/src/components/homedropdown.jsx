@@ -49,11 +49,12 @@ const HomeDropdown = () => {
         data-bs-toggle="dropdown"
         aria-expanded="false"
       >
-        <img
-          src="https://example.com/profile-picture.jpg" 
+        <img 
+          src={'https://xsgames.co/randomusers/avatar.php?g=pixel'}
           alt="Profile"
-          width="32"
-          height="32"
+          width="45px"
+          height="45px"
+          margin-bottom="50px"
           className="rounded-circle me-2"
         />
       </a>

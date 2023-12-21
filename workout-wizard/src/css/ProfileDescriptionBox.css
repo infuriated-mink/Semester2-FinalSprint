@@ -1,0 +1,93 @@
+label {
+    font-size: 32px;
+    font-weight: 300;
+
+}
+
+.heightBox {
+    align-self: center;
+    width: 350px;
+    height: 100px;
+    background: transparent;
+    border-radius: 15px;
+    border: 2px solid #81CDE5;
+    margin: 20px;
+    justify-content: center;
+    box-shadow: 0px 0px 10px #888888;
+    display: flex;
+    padding-top: 20px;
+}
+
+.descBox {
+    display: flex;
+    align-self: center;
+    width: 890px;
+    height: 160px;
+    background: transparent;
+    border-radius: 15px;
+    border: 2px solid #81CDE5;
+    margin: 20px;
+    justify-content: center;
+    box-shadow: 0px 0px 10px #888888;
+    text-align: center;
+    align-content: center;
+}
+.HWtextarea {
+    width : 90px;
+    height: 50px;
+    margin-left: 20px;
+    border-radius: 15px;
+    border: 2px solid #81CDE5;
+    text-align: center;
+}
+
+.descriptiontextarea {
+    width: 500px;
+    height: 110px;
+    background: white;
+    border-radius: 15px;
+    border: 2px solid #81CDE5;
+    margin: 20px;
+    justify-content: center;
+    box-shadow: 0px 0px 10px #888888;
+
+}
+
+.saveButton {
+    width: 100px;
+    height: 50px;
+    background: #81CDE5;
+    border-radius: 15px;
+    border: 2px solid #81CDE5;
+    margin: 20px;
+    justify-content: center;
+    box-shadow: 0px 0px 10px #888888;
+    font-size: 24px;
+    font-weight: 300;
+    color: white;
+    text-align: center;
+    align-self: center;
+    padding-top: 10px;
+}
+
+.saveButton:hover {
+    background: white;
+    color: #81CDE5;
+    cursor: pointer;
+}
+
+.saveButton:active {
+    background: #81CDE5;
+    color: white;
+    cursor: pointer;
+    border: 2px solid #81CDE5;
+    margin: 20px;
+    justify-content: center;
+    box-shadow: 0px 0px 10px #888888;
+    font-size: 24px;
+    font-weight: 300;
+    color: white;
+    text-align: center;
+    align-self: center;
+    padding-top: 10px;
+}

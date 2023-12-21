@@ -26,17 +26,17 @@ const StoreDropdown = () => {
     }
   }, []);
 
-  const handleProfileClick = () => {
-    // Navigate to the profile page
-    navigate('/profile');
+  const handleHomeClick = () => {
+    // Navigate to the main page
+    navigate('/main');
   };
 
   const handleLogout = () => {
     // Clear the logged-in user's email from local storage
     localStorage.removeItem('loggedInUserEmail');
     
-    // Navigate back to the landing page
-    navigate('/');
+    // Navigate back to the main page
+    navigate('/mainpage');
   };
 
   return (
@@ -48,32 +48,32 @@ const StoreDropdown = () => {
         data-bs-toggle="dropdown"
         aria-expanded="false"
       >
-        <img
-          src="https://example.com/profile-picture.jpg"  
+        <img 
+          src={'https://xsgames.co/randomusers/avatar.php?g=pixel'}
           alt="Profile"
-          width="32"
-          height="32"
+          width="45px"
+          height="45px"
           className="rounded-circle me-2"
         />
       </a>
-      <ul className="dropdown-menu text-small shadow" aria-labelledby="dropdownUser1">
+      <ul className="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
         <li>
           <span className="dropdown-item">{fullName}</span>
         </li>
         <li>
-          <button className="dropdown-item" type="button" onClick={handleProfileClick}>
-            Profile
-          </button>
-        </li>
-        <li>
-          <button className="dropdown-item" type="button" onClick={handleStoreClick}>
+          <button className="dropdown-item" type="button" onClick={handleHomeClick}>
             Home
           </button>
         </li>
         <li>
-          <button className="dropdownitemlog1" type="button" onClick={handleLogout}>
-            Logout
+          <button className="dropdown-item" type="button">
+            Store
           </button>
+        </li>
+        <li>
+          <button className="dropdown-item" type="button" onClick={handleLogout}>
+            Logout
+          </button> 
         </li>
       </ul>
     </div>

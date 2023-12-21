@@ -1,6 +1,8 @@
+
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../css/profiledropdown.css'
+
 
 const ProfileDropdown = () => {
   const navigate = useNavigate();
@@ -55,7 +57,12 @@ const ProfileDropdown = () => {
         data-bs-toggle="dropdown"
         aria-expanded="false"
       >
-        <img src={profilePic} alt="pic" width="50px" className="profile-img" />
+        <img 
+          src={'https://xsgames.co/randomusers/avatar.php?g=pixel'}
+          alt="Profile"
+          width="45px"
+          height="45px"
+          className="rounded-circle mb-3"/>
       </a>
       <ul
         className="dropdown-menu dropdown-menu-dark text-small shadow"
