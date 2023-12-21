@@ -11,7 +11,7 @@ import ProfileDropdown from "./profiledropdown";
 const Header = () => {
   return (
     <>
-      <div className="header-class">
+      <div className="header-toilet">
         <img
           src={workoutWizard}
           alt="workout wizard img"

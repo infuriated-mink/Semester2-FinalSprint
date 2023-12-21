@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import $ from "jquery";
 import { Modal, Button, ButtonGroup } from "react-bootstrap";
 import CalCardSmall from "./CalCardSmall";
+import "../css/ExerciseModal.css";
 
 const ExerciseModal = ({ isOpen, onClose }) => {
   const [results, setResults] = useState([]);
@@ -34,7 +35,6 @@ const ExerciseModal = ({ isOpen, onClose }) => {
     Chest: ["chest"],
     Back: ["lats", "lower_back", "middle_back", "traps"],
     Core: ["abdominals"],
-    Cardio: ["cardio"],
   };
 
   const handleMuscleClick = (muscle) => {
@@ -278,7 +278,7 @@ const ExerciseModal = ({ isOpen, onClose }) => {
   return (
     <div>
       <Modal show={show} onHide={handleClose}>
-        <Modal.Header closeButton>
+        <Modal.Header closeButton className="modal-bg">
           <Modal.Title>Add Exercise</Modal.Title>
         </Modal.Header>
         <Modal.Body>
@@ -300,10 +300,11 @@ const ExerciseModal = ({ isOpen, onClose }) => {
           </ButtonGroup>
 
           <div>
-            <label>Day of the Week: </label>
+            <label className="font-color">Day of the Week: </label>
             <select
               value={selectedDay}
               onChange={(e) => setSelectedDay(e.target.value)}
+              className="select-style"
             >
               <option value="--">--</option>
               <option value="Monday">Monday</option>
@@ -317,20 +318,24 @@ const ExerciseModal = ({ isOpen, onClose }) => {
           </div>
 
           <div>
-            <label>Level: </label>
-            <select value={level} onChange={(e) => setLevel(e.target.value)}>
+            <label className="font-color">Mastery</label>
+            <select
+              value={level}
+              onChange={(e) => setLevel(e.target.value)}
+              className="select-style"
+            >
               <option value="" disabled hidden>
-                Select Level
+                Mastery
               </option>
-              <option value="beginner">Beginner</option>
-              <option value="intermediate">Intermediate</option>
-              <option value="expert">Expert</option>
+              <option value="beginner">Apprentice</option>
+              <option value="intermediate">Grand Master</option>
+              {/* <option value="expert">Expert</option> */}
             </select>
           </div>
 
           <div>
             <div>
-              <label>Build Type: </label>
+              <label className="font-color">Build Type: </label>
             </div>
             <ButtonGroup>
               <Button
@@ -416,8 +421,12 @@ const ExerciseModal = ({ isOpen, onClose }) => {
             </div>
           )}
         </Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
+        <Modal.Footer className="modal-bg">
+          <Button
+            variant="secondary"
+            onClick={handleClose}
+            className="close-bg"
+          >
             Close
           </Button>
         </Modal.Footer>

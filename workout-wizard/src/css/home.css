@@ -25,7 +25,7 @@ body {
   flex-direction: column;
 }
 
-.header-class {
+.header-toilet {
   display: flex;
   border: 1px solid #81cde5;
   background-color: rgb(245, 245, 245);

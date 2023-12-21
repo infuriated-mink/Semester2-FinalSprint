@@ -1,8 +1,6 @@
-
-import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
-import '../css/profiledropdown.css'
-
+import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import "../css/profiledropdown.css";
 
 const ProfileDropdown = () => {
   const navigate = useNavigate();
@@ -52,17 +50,18 @@ const ProfileDropdown = () => {
     <div className="dropdown">
       <a
         href="#"
-        className="d-flex align-items-center link-dark text-decoration-none dropdown-toggle"
+        className="d-flex align-items-center text-decoration-none dropdown-toggle"
         id="dropdownUser1"
         data-bs-toggle="dropdown"
         aria-expanded="false"
       >
-        <img 
-          src={'https://xsgames.co/randomusers/avatar.php?g=pixel'}
+        <img
+          src={"https://xsgames.co/randomusers/avatar.php?g=pixel"}
           alt="Profile"
           width="45px"
           height="45px"
-          className="rounded-circle mb-3"/>
+          className="rounded-circle mb-3"
+        />
       </a>
       <ul
         className="dropdown-menu dropdown-menu-dark text-small shadow"
@@ -81,13 +80,20 @@ const ProfileDropdown = () => {
           </button>
         </li>
         <li>
-          <button className="dropdown-item" type="button"
-          onClick={handleStoreClick}>
+          <button
+            className="dropdown-item"
+            type="button"
+            onClick={handleStoreClick}
+          >
             Store
           </button>
         </li>
         <li>
-          <button className="dropdownitemlog" type="button" onClick={handleLogout}>
+          <button
+            className="dropdownitemlog"
+            type="button"
+            onClick={handleLogout}
+          >
             Logout
           </button>
         </li>
