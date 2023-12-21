@@ -37,10 +37,6 @@ const ProfileDropdown = () => {
     // Navigate to the profile page
     navigate("/store");
   };
-  const handleLandingClick = () => {
-    // Navigate to the profile page
-    navigate("/");
-  };
 
   const handleLogout = () => {
     // Clear the logged-in user's email from local storage
@@ -92,15 +88,7 @@ const ProfileDropdown = () => {
             Store
           </button>
         </li>
-        <li>
-          <button
-            className="dropdown-item"
-            type="button"
-            onClick={handleLandingClick}
-          >
-            Home
-          </button>
-        </li>
+        <li></li>
         <li>
           <button
             className="dropdownitemlog"

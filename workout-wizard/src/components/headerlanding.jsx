@@ -5,13 +5,12 @@ import xImg from "../images/twitter.png";
 import instaImg from "../images/instagram.png";
 import youTube from "../images/youtube.png";
 import pinterest from "../images/pinterest.png";
-import LandingDropdown from "./landingdropdown";
-
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
     <>
-      <div className="header-class">
+      <div className="header-toilet">
         <img
           src={workoutWizard}
           alt="workout wizard img"
@@ -22,7 +21,14 @@ const Header = () => {
           it means to."
         </p>
         <div className="profile-container">
-          <LandingDropdown />
+          <div>
+            <Link to="/login">
+              <button className="btn-login">Log In</button>
+            </Link>
+            <Link to="/signup">
+              <button className="btn-signup">Sign Up</button>
+            </Link>
+          </div>
           <div className="icons-div">
             <img
               src={fbImg}

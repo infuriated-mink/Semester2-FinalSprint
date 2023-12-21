@@ -4,6 +4,7 @@ import userData from "../data/user.json";
 import "../css/landingpage.css";
 import workoutWizard from "../images/mohammad.png";
 import Header from "../components/headerlanding.jsx";
+import ladyRipped from "../images/homepage.png";
 
 function LandingPage() {
   // useEffect will run once when the component mounts
@@ -20,17 +21,10 @@ function LandingPage() {
       <div className="topbox">
         {/* Header goes here */}
         <Header />
-        <div className="header-box">
-          <div className="header-classimg"></div>
+        <div className="workout">
+          <img src={ladyRipped} alt="lady ripped" className="ladyImg" />
         </div>
-        <div>
-          <Link to="/login">
-            <button className="btn-login">Login</button>
-          </Link>
-          <Link to="/signup">
-            <button className="btn-signup">Sign Up</button>
-          </Link>
-          <div className="workout"></div>
+        <div className="manwhatabox">
           <div className="grey-box">
             <div className="what-we-offer"> What we offer:</div>
             <div className="list">
@@ -45,18 +39,18 @@ function LandingPage() {
               <button className="btn-signup2">Sign Up</button>
             </Link>
           </div>
-          <div className="bottom-box">
-            <div className="our-mission">Our Mission</div>
-            <p className="mission-paragraph">
-              Unleash the magic within as we blend the mystical with the
-              physical. Our mission is to guide aspiring wizards <br />
-              on a transformative fitniss odyssey, sculpting not just bodies,
-              but unlocking the full potential of mind, body, <br />
-              and soul, Embrace the enchantment of a healthier, stronger you.
-            </p>
-            <div className="contact">Contact us at info@workoutwizard.com</div>
-            <div className="produced">workout Wizard, 2023</div>
-          </div>
+        </div>
+        <div className="bottom-box">
+          <div className="our-mission">Our Mission</div>
+          <p className="mission-paragraph">
+            Unleash the magic within as we blend the mystical with the physical.
+            Our mission is to guide aspiring wizards <br />
+            on a transformative fitniss odyssey, sculpting not just bodies, but
+            unlocking the full potential of mind, body, <br />
+            and soul, Embrace the enchantment of a healthier, stronger you.
+          </p>
+          <div className="contact">Contact us at info@workoutwizard.com</div>
+          <div className="produced">workout Wizard, 2023</div>
         </div>
       </div>
     </div>

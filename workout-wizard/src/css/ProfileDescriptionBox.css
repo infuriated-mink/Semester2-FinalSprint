@@ -1,93 +1,103 @@
 label {
-    font-size: 32px;
-    font-weight: 300;
-
+  font-size: 32px;
+  font-weight: 300;
 }
 
 .heightBox {
-    align-self: center;
-    width: 350px;
-    height: 100px;
-    background: transparent;
-    border-radius: 15px;
-    border: 2px solid #81CDE5;
-    margin: 20px;
-    justify-content: center;
-    box-shadow: 0px 0px 10px #888888;
-    display: flex;
-    padding-top: 20px;
+  /* align-items: center; */
+  width: 50%;
+  margin-left: 150px;
+  height: 100px;
+  background: transparent;
+  border-radius: 15px;
+  border: 2px solid #81cde5;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  justify-content: center;
+  /* justify-self: center; */
+  box-shadow: 0px 0px 10px #888888;
+  display: flex;
+  flex-direction: column;
 }
 
 .descBox {
-    display: flex;
-    align-self: center;
-    width: 890px;
-    height: 160px;
-    background: transparent;
-    border-radius: 15px;
-    border: 2px solid #81CDE5;
-    margin: 20px;
-    justify-content: center;
-    box-shadow: 0px 0px 10px #888888;
-    text-align: center;
-    align-content: center;
+  display: flex;
+  align-self: center;
+  max-width: 600px;
+  height: 220px;
+  background: transparent;
+  border-radius: 15px;
+  border: 2px solid #81cde5;
+  padding: 20px 50px 20px 50px;
+  justify-content: center;
+  box-shadow: 0px 0px 10px #888888;
+  text-align: center;
+  align-content: center;
 }
+
 .HWtextarea {
-    width : 90px;
-    height: 50px;
-    margin-left: 20px;
-    border-radius: 15px;
-    border: 2px solid #81CDE5;
-    text-align: center;
+  width: 90px;
+  height: 50px;
+  margin-left: 20px;
+  border-radius: 15px;
+  border: 2px solid #81cde5;
+  text-align: center;
 }
 
 .descriptiontextarea {
-    width: 500px;
-    height: 110px;
-    background: white;
-    border-radius: 15px;
-    border: 2px solid #81CDE5;
-    margin: 20px;
-    justify-content: center;
-    box-shadow: 0px 0px 10px #888888;
-
+  width: 450px;
+  height: 100px;
+  background: white;
+  border-radius: 15px;
+  border: 2px solid #81cde5;
+  margin: 20px;
+  justify-content: center;
+  box-shadow: 0px 0px 10px #888888;
+  padding-left: 10px;
 }
 
 .saveButton {
-    width: 100px;
-    height: 50px;
-    background: #81CDE5;
-    border-radius: 15px;
-    border: 2px solid #81CDE5;
-    margin: 20px;
-    justify-content: center;
-    box-shadow: 0px 0px 10px #888888;
-    font-size: 24px;
-    font-weight: 300;
-    color: white;
-    text-align: center;
-    align-self: center;
-    padding-top: 10px;
+  width: 100px;
+  height: 50px;
+  background: #81cde5;
+  border-radius: 15px;
+  border: 2px solid #81cde5;
+  margin: 20px;
+  justify-content: center;
+  box-shadow: 0px 0px 10px #888888;
+  font-size: 24px;
+  font-weight: 300;
+  color: white;
+  text-align: center;
+  align-self: center;
+  padding-top: 10px;
 }
 
 .saveButton:hover {
-    background: white;
-    color: #81CDE5;
-    cursor: pointer;
+  background: white;
+  color: #81cde5;
+  cursor: pointer;
 }
 
 .saveButton:active {
-    background: #81CDE5;
-    color: white;
-    cursor: pointer;
-    border: 2px solid #81CDE5;
-    margin: 20px;
-    justify-content: center;
-    box-shadow: 0px 0px 10px #888888;
-    font-size: 24px;
-    font-weight: 300;
-    color: white;
-    text-align: center;
-    align-self: center;
-    padding-top: 10px;
+  background: #81cde5;
+  color: white;
+  cursor: pointer;
+  border: 2px solid #81cde5;
+  margin: 20px;
+  justify-content: center;
+  box-shadow: 0px 0px 10px #888888;
+  font-size: 24px;
+  font-weight: 300;
+  color: white;
+  text-align: center;
+  align-self: center;
+  padding-top: 10px;
+}
+
+.profile-description-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }

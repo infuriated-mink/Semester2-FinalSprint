@@ -35,7 +35,7 @@ body {
   border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
   box-shadow: 0px 0px 10px #888888;
-  min-width: 1000px;
+  /* min-width: 1000px; */
 }
 
 .logo-img {
@@ -48,6 +48,7 @@ body {
 
 .sloganText {
   font-size: 22px;
+  padding-left: 10px;
 }
 
 .profile-container {
@@ -87,7 +88,7 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  min-width: 1000px;
+  /* min-width: 1000px; */
 }
 
 .calendar-section-left {

@@ -1,24 +1,26 @@
-import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
-import '../css/homedropdown.css'
+import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import "../css/homedropdown.css";
 
 const HomeDropdown = () => {
   const navigate = useNavigate();
-  const [fullName, setFullName] = useState('');
+  const [fullName, setFullName] = useState("");
 
   useEffect(() => {
     // Retrieve the logged-in user's email from local storage
-    const loggedInUserEmail = localStorage.getItem('loggedInUserEmail');
+    const loggedInUserEmail = localStorage.getItem("loggedInUserEmail");
 
     if (loggedInUserEmail) {
       // Retrieve user data from local storage
-      const storedUserData = localStorage.getItem('userData');
+      const storedUserData = localStorage.getItem("userData");
 
       if (storedUserData) {
         const userData = JSON.parse(storedUserData);
 
         // Find the user with the matching email
-        const currentUser = userData.users.find(user => user.email === loggedInUserEmail);
+        const currentUser = userData.users.find(
+          (user) => user.email === loggedInUserEmail
+        );
 
         if (currentUser) {
           setFullName(currentUser.fullName);
@@ -29,26 +31,20 @@ const HomeDropdown = () => {
 
   const handleProfileClick = () => {
     // Navigate to the main page
-    navigate('/profile');
+    navigate("/profile");
   };
 
-  
   const handleStoreClick = () => {
     // Navigate to the main page
-    navigate('/store');
-  };
-
-  const handleLandingClick = () => {
-    // Navigate to the main page
-    navigate('/');
+    navigate("/store");
   };
 
   const handleLogout = () => {
     // Clear the logged-in user's email from local storage
-    localStorage.removeItem('loggedInUserEmail');
-    
+    localStorage.removeItem("loggedInUserEmail");
+
     // Navigate back to the main page
-    navigate('/mainpage');
+    navigate("/");
   };
 
   return (
@@ -60,8 +56,8 @@ const HomeDropdown = () => {
         data-bs-toggle="dropdown"
         aria-expanded="false"
       >
-        <img 
-          src={'https://xsgames.co/randomusers/avatar.php?g=pixel'}
+        <img
+          src={"https://xsgames.co/randomusers/avatar.php?g=pixel"}
           alt="Profile"
           width="45px"
           height="45px"
@@ -69,29 +65,40 @@ const HomeDropdown = () => {
           className="rounded-circle me-2"
         />
       </a>
-      <ul className="dropdown-menu text-small shadow" aria-labelledby="dropdownUser1">
+      <ul
+        className="dropdown-menu text-small shadow"
+        aria-labelledby="dropdownUser1"
+      >
         <li>
           <span className="dropdown-item">{fullName}</span>
         </li>
         <li>
-          <button className="dropdown-item" type="button" onClick={handleProfileClick}>
+          <button
+            className="dropdown-item"
+            type="button"
+            onClick={handleProfileClick}
+          >
             Profile
           </button>
         </li>
         <li>
-          <button className="dropdown-item" type="button"  onClick={handleStoreClick}>
+          <button
+            className="dropdown-item"
+            type="button"
+            onClick={handleStoreClick}
+          >
             Store
           </button>
         </li>
+
         <li>
-          <button className="dropdown-item" type="button"  onClick={handleLandingClick}>
-            Main
-          </button>
-        </li>
-        <li>
-          <button className="dropdownitemlog2" type="button" onClick={handleLogout}>
+          <button
+            className="dropdownitemlog2"
+            type="button"
+            onClick={handleLogout}
+          >
             Logout
-          </button> 
+          </button>
         </li>
       </ul>
     </div>

@@ -1,19 +1,23 @@
 .mainBoxStore {
-    width: flex;
-    flex-direction: column;
-    height: 1204px;
-    background: #FFF;
+  width: flex;
+  flex-direction: column;
+  height: 1204px;
+  background: #fff;
+}
+
+.back-to-home-btn {
+  padding: 10px;
 }
 
 .pageUnderCon {
-    width: flex;
-    flex-direction: column;
-    height: 840px;
-    background:  rgb(245, 245, 245);
-    border-radius: 15px;
-    align-items: center;
-    margin: 25px;
-    text-align: center;
-    padding-top: 50px; 
-    font-size: 90px;
-};
+  width: flex;
+  flex-direction: column;
+  height: 840px;
+  background: rgb(245, 245, 245);
+  border-radius: 15px;
+  align-items: center;
+  margin: 25px;
+  text-align: center;
+  padding-top: 50px;
+  font-size: 90px;
+}

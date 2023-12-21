@@ -6,12 +6,12 @@ import xImg from "../images/twitter.png";
 import instaImg from "../images/instagram.png";
 import youTube from "../images/youtube.png";
 import pinterest from "../images/pinterest.png";
-import StoreDropdown from "./storedropdown";    
+import StoreDropdown from "./storedropdown";
 
 const Header = () => {
   return (
     <>
-      <div className="header-class">
+      <div className="header-toilet">
         <img
           src={workoutWizard}
           alt="workout wizard img"

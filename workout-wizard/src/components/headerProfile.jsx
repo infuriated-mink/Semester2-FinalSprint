@@ -7,11 +7,10 @@ import youTube from "../images/youtube.png";
 import pinterest from "../images/pinterest.png";
 import ProfileDropdown from "./profiledropdown";
 
-
 const Header = () => {
   return (
     <>
-      <div className="header-class">
+      <div className="header-toilet">
         <img
           src={workoutWizard}
           alt="workout wizard img"

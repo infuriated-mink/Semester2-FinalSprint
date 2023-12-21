@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import '../css/signup.css';
-import signupWizard from '../images/SignUpWizard.png';
+import "../css/signup.css";
+import signupWizard from "../images/SignUpWizard.png";
 
 const Signup = () => {
   const navigate = useNavigate();
@@ -12,7 +12,9 @@ const Signup = () => {
   const handleSignup = () => {
     // Load existing user data from userData in local storage
     const existingUserData = localStorage.getItem("userData");
-    let userData = existingUserData ? JSON.parse(existingUserData) : { users: [] };
+    let userData = existingUserData
+      ? JSON.parse(existingUserData)
+      : { users: [] };
 
     // Check if the email already exists
     const existingUser = userData.users.find((user) => user.email === email);
@@ -43,10 +45,10 @@ const Signup = () => {
     <div className="Auth-form-container">
       <form className="Auth-form1">
         <div className="Auth-form-content">
-        <img 
-           src={signupWizard} 
-           alt="workout wizard img"
-           className="logo-img2" 
+          <img
+            src={signupWizard}
+            alt="workout wizard img"
+            className="logo-img2"
           />
           <h3 className="Auth-form-title"></h3>
           <div className="textcenter2">
@@ -86,11 +88,7 @@ const Signup = () => {
             />
           </div>
           <div className="button2">
-            <button
-              type="button"
-              className="but2"
-              onClick={handleSignup}
-            >
+            <button type="button" className="but2" onClick={handleSignup}>
               Submit
             </button>
           </div>

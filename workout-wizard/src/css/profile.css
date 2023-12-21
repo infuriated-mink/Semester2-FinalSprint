@@ -1,75 +1,78 @@
-.mainBox {
-    width: flex;
-    flex-direction: column;
-    height: 1204px;
-    background: #FFF;
+.mainBoxy {
+  width: flex;
+  flex-direction: column;
+  height: auto;
+  background: #fff;
+  padding-bottom: 20px;
 }
 /*this is the css for the profile box*/
 .profileBox {
-    display: flex;
-    height: 3000px;
-    background: rgb(245, 245, 245);
-    border-radius: 15px;
-    border: 2px solid #81CDE5;
-    margin: 20px;
-    justify-content: center;
-    box-shadow: 0px 0px 10px #888888;
+  display: flex;
+  height: auto;
+  background: rgb(245, 245, 245);
+  border-radius: 15px;
+  border: 2px solid #81cde5;
+  margin: 20px;
+  justify-content: center;
+  box-shadow: 0px 0px 10px #888888;
+  padding-bottom: 40px;
 }
 .columnProfile1 {
-    flex: 1;
-    flex-direction: column;
-    width: 100%;
-    padding: 0;
-    box-sizing: border-box;
+  flex: 1;
+  flex-direction: column;
+  width: 100%;
+  padding: 0;
+  box-sizing: border-box;
 }
 .columnProfile2 {
-    flex-direction: column;
-    display: flex;
-    width: 100%;
-    box-sizing: border-box;
+  flex-direction: column;
+  display: flex;
+  width: 100%;
+  box-sizing: border-box;
 }
 .profileYourNameBox {
-    width: flex;
-    height: 80px;
+  width: flex;
+  height: 80px;
 }
 
-.fullNameText {    
-    text-align: center;
-    font-family: karatina;
-    font-size: 64px;
-    font-style: normal;
-    font-weight: 400;}
+.fullNameText {
+  text-align: center;
+  font-family: karatina;
+  font-size: 64px;
+  font-style: normal;
+  font-weight: 400;
+}
 
 .profilePicBox {
-    justify-content: center;
-    align-self: center;
-    width: 360px;
-    height: 360px;
-    background: url;
-    border-radius: 360px;
-    border: 2px solid black;
-    margin-top: 20px;
-    align-content: center;
+  justify-content: center;
+  align-self: center;
+  width: 360px;
+  height: 360px;
+  background: url;
+  border-radius: 360px;
+  border: 2px solid black;
+  margin-top: 20px;
+  align-content: center;
 }
 
 .profileDescriptionBox {
-    display: flex;
-    width: 1000px;
-    height: 650px;
-    background: whitesmoke;
-    border-radius: 15px;
-    border: 2px solid #81CDE5;
-    margin-top: 20px;
-    justify-content: center;
-    align-self: center;
-    box-shadow: 0px 5px 5px 0px #888888;
-    padding: 20px;
-    text-align: center;
-    font-size: 48px;
-    
-} 
-
-
+  display: flex;
+  width: flex;
+  flex-direction: column;
+  height: 650px;
+  background: whitesmoke;
+  border-radius: 15px;
+  border: 2px solid #81cde5;
+  margin-top: 20px;
+  /* justify-content: center; */
+  align-items: center;
+  box-shadow: 0px 2px 5px 0px #a2a2a2;
+  padding: 20px;
+  text-align: center;
+  font-size: 48px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
 
 /* here is the css for the header and everyhting inside of it
 
