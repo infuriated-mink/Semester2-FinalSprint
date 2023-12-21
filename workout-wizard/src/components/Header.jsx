@@ -24,31 +24,54 @@ const Header = () => {
         <div className="profile-container">
           <ProfileDropdown />
           <div className="icons-div">
-            <img
-              src={fbImg}
-              alt="fb icon"
-              width="20px"
-              className="icon-class"
-            />
-            <img src={xImg} alt="X icon" width="20px" className="icon-class" />
-            <img
-              src={instaImg}
-              alt="insta icon"
-              width="20px"
-              className="icon-class"
-            />
-            <img
-              src={youTube}
-              alt="youtube icon"
-              width="20px"
-              className="icon-class"
-            />
-            <img
-              src={pinterest}
-              alt="pinterest icon"
-              width="20px"
-              className="icon-class"
-            />
+            <a href="https://www.facebook.com" target="_blank" rel="noreferrer">
+              <img
+                src={fbImg}
+                alt="fb icon"
+                width="20px"
+                className="icon-class"
+              />
+            </a>
+            <a href="https://www.twitter.com" target="_blank" rel="noreferrer">
+              <img
+                src={xImg}
+                alt="X icon"
+                width="20px"
+                className="icon-class"
+              />
+            </a>
+            <a
+              href="https://www.instagram.com"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img
+                src={instaImg}
+                alt="insta icon"
+                width="20px"
+                className="icon-class"
+              />
+            </a>
+            <a href="https://www.youtube.com" target="_blank" rel="noreferrer">
+              <img
+                src={youTube}
+                alt="youtube icon"
+                width="20px"
+                className="icon-class"
+              />
+            </a>
+            <a
+              href="https://www.pinterest.com"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img
+                src={pinterest}
+                alt="pinterest icon"
+                width="20px"
+                className="icon-class"
+              />
+            </a>
           </div>
         </div>
       </div>
