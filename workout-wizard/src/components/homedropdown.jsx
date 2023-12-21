@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import '../css/homedropdown.css'
 
 const HomeDropdown = () => {
   const navigate = useNavigate();
@@ -56,7 +57,7 @@ const HomeDropdown = () => {
           className="rounded-circle me-2"
         />
       </a>
-      <ul className="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
+      <ul className="dropdown-menu text-small shadow" aria-labelledby="dropdownUser1">
         <li>
           <span className="dropdown-item">{fullName}</span>
         </li>
@@ -71,7 +72,7 @@ const HomeDropdown = () => {
           </button>
         </li>
         <li>
-          <button className="dropdown-item" type="button" onClick={handleLogout}>
+          <button className="dropdownitemlog2" type="button" onClick={handleLogout}>
             Logout
           </button> 
         </li>

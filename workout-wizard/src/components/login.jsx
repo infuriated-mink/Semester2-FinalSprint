@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import '../css/login.css';
+import loginWizard from '../images/buffWizard.png';
 
 export default function Login() {
   const navigate = useNavigate();
@@ -37,46 +39,53 @@ export default function Login() {
   };
 
   return (
-    <div className="Auth-form-container">
-      <form className="Auth-form">
-        <div className="Auth-form-content">
-          <h3 className="Auth-form-title">Sign In</h3>
-          <div className="text-center">
-            Not registered yet?{" "}
+    <div className="form-container">
+      <form className="Authform">
+        <div className="form-content">
+        <img 
+           src={loginWizard} 
+           alt="workout wizard img"
+           className="logo-img1" 
+          />
+          <div className="formtitle"></div>
+          <div className="textcenter">
+            Don't have a profile?{" "}
             <Link to="/signup" className="link-primary">
-              Sign Up
+              Sign Up!
             </Link>
           </div>
-          <div className="form-group mt-3">
-            <label>Email address</label>
+          <div className="mail">
+            <label>Email Address:</label></div>
+            <div>
             <input
               type="email"
-              className="form-control mt-1"
+              className="formcontrol1"
               placeholder="Enter email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
           </div>
-          <div className="form-group mt-3">
-            <label>Password</label>
+          <div className="password">
+            <label>Password:</label></div>
+            <div>
             <input
               type="password"
-              className="form-control mt-1"
+              className="formcontrol2"
               placeholder="Enter password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
           </div>
-          <div className="d-grid gap-2 mt-3">
+          <div className="button1">
             <button
               type="button"
-              className="btn btn-primary"
+              className="but"
               onClick={handleLogin}
             >
-              Submit
+              Log In
             </button>
           </div>
-          <p className="text-center mt-2">
+          <p className="forgotpassword1">
             {loginError && (
               <span className="error-message">{loginError}</span>
             )}

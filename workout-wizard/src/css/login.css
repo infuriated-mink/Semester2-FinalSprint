@@ -1,0 +1,159 @@
+/* login.css */
+
+@import url("https://fonts.googleapis.com/css2?family=Karantina&family=Poppins:wght@100&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Inter&family=Karantina&family=Poppins:wght@100&display=swap");
+
+* {
+  font-family: "Karantina";
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.logo-img1 {
+  position: relative;
+  left: 30px;
+  width: 250px;
+}
+
+.textcenter {
+  position: relative;
+  bottom: 40px;
+  text-align: center;
+  font-size: 20px;
+}
+
+.formtitle {
+    font-size: 30px;
+    font-weight: 200;
+    font-family: "Karantina", sans-serif;
+    color: #3992AE;
+    font-size: 30px;
+    font-weight: 500;
+    height: 50px;
+    text-align: center;
+}
+
+.mail {
+  position: relative;
+  bottom: 35px;
+  margin-left: 35px;
+}
+
+.formcontrol1 {
+  position: relative;
+  bottom: 35px;
+  padding-right: 140px;
+  margin-left: 35px;
+}
+
+.formcontrol2 {
+  position: relative;
+  bottom: 35px;
+  padding-right: 140px;
+  margin-left: 35px;
+}
+
+.password {
+  position: relative;
+  bottom: 35px;
+  margin-left: 35px;
+}
+
+.button1 {
+  position: relative;
+  bottom: 35px;
+  text-align: center;
+}
+
+.but {
+  background-color: white;
+  border-radius: 25px;
+  font-size: 30px;
+  border: 2px solid #81cde5;
+  color: #3992ae;
+  text-align: center;
+  padding-left: 40px;
+  padding-right: 40px;
+  margin-top: 20px;
+}
+
+.forgotpassword1 {
+  position: relative;
+  bottom: 45px;
+  text-align: center;
+  font-size: 20px;
+}
+
+.error-message {
+  position: relative;
+  top: 7px;
+  color: #dc3545;
+}
+
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: left;
+    height: 1000vh;
+    padding-top: 160px;
+  }
+
+  .link-primary {
+    color: #81CDE5;
+  }
+  
+  .Authform {
+    width: 350px;
+    height: 430px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    border-color: #81CDE5;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .form-title {
+    text-align: center;
+  }
+  
+  .link-primary {
+    color: #dc3545;
+  }
+  
+  .mt-3 {
+    margin-bottom: 15px;
+    font-weight: bold;
+    font-size: 30px;
+  }
+
+  .mail {
+    font-weight: 200;
+    font-size: 20px;
+  }
+  
+  .formcontrol {
+    width: 100%;
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .d-grid {
+    display: grid;
+  }
+
+  .btn-primary:hover {
+    background-color: lightgrey;
+    color: white;
+    border: 2px solid #81CDE5;
+  }
+  
+  .text-center {
+    text-align: center; 
+  } 
+  
+  /* Add more styles as needed */
+  

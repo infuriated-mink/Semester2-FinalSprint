@@ -1,26 +1,23 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import '../css/profiledropdown.css'
 
-const ProfileDropdown = () => {
+const StoreDropdown = () => {
   const navigate = useNavigate();
-  const [fullName, setFullName] = useState("");
+  const [fullName, setFullName] = useState('');
 
   useEffect(() => {
     // Retrieve the logged-in user's email from local storage
-    const loggedInUserEmail = localStorage.getItem("loggedInUserEmail");
+    const loggedInUserEmail = localStorage.getItem('loggedInUserEmail');
 
     if (loggedInUserEmail) {
       // Retrieve user data from local storage
-      const storedUserData = localStorage.getItem("userData");
+      const storedUserData = localStorage.getItem('userData');
 
       if (storedUserData) {
         const userData = JSON.parse(storedUserData);
 
         // Find the user with the matching email
-        const currentUser = userData.users.find(
-          (user) => user.email === loggedInUserEmail
-        );
+        const currentUser = userData.users.find(user => user.email === loggedInUserEmail);
 
         if (currentUser) {
           setFullName(currentUser.fullName);
@@ -31,19 +28,15 @@ const ProfileDropdown = () => {
 
   const handleProfileClick = () => {
     // Navigate to the profile page
-    navigate("/profile");
-  };
-  const handleStoreClick = () => {
-    // Navigate to the profile page
-    navigate("/store");
+    navigate('/profile');
   };
 
   const handleLogout = () => {
     // Clear the logged-in user's email from local storage
-    localStorage.removeItem("loggedInUserEmail");
-
+    localStorage.removeItem('loggedInUserEmail');
+    
     // Navigate back to the landing page
-    navigate("/");
+    navigate('/');
   };
 
   return (
@@ -55,32 +48,30 @@ const ProfileDropdown = () => {
         data-bs-toggle="dropdown"
         aria-expanded="false"
       >
-        <img src={profilePic} alt="pic" width="50px" className="profile-img" />
+        <img
+          src="https://example.com/profile-picture.jpg"  
+          alt="Profile"
+          width="32"
+          height="32"
+          className="rounded-circle me-2"
+        />
       </a>
-      <ul
-        className="dropdown-menu dropdown-menu-dark text-small shadow"
-        aria-labelledby="dropdownUser1"
-      >
+      <ul className="dropdown-menu text-small shadow" aria-labelledby="dropdownUser1">
         <li>
           <span className="dropdown-item">{fullName}</span>
         </li>
         <li>
-          <button
-            className="dropdown-item"
-            type="button"
-            onClick={handleProfileClick}
-          >
+          <button className="dropdown-item" type="button" onClick={handleProfileClick}>
             Profile
           </button>
         </li>
         <li>
-          <button className="dropdown-item" type="button"
-          onClick={handleStoreClick}>
-            Store
+          <button className="dropdown-item" type="button" onClick={handleStoreClick}>
+            Home
           </button>
         </li>
         <li>
-          <button className="dropdownitemlog" type="button" onClick={handleLogout}>
+          <button className="dropdownitemlog1" type="button" onClick={handleLogout}>
             Logout
           </button>
         </li>
@@ -89,4 +80,4 @@ const ProfileDropdown = () => {
   );
 };
 
-export default ProfileDropdown;
+export default StoreDropdown;
