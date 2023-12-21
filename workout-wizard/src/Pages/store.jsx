@@ -1,5 +1,5 @@
 import React from 'react';
-import Header from "../components/Header.jsx";
+import Header from "../components/headerStore.jsx";
 import "../css/store.css";
 import { Link } from 'react-router-dom';
 

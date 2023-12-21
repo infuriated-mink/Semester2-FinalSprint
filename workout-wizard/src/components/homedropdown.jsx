@@ -27,9 +27,20 @@ const HomeDropdown = () => {
     }
   }, []);
 
-  const handleHomeClick = () => {
+  const handleProfileClick = () => {
     // Navigate to the main page
-    navigate('/main');
+    navigate('/profile');
+  };
+
+  
+  const handleStoreClick = () => {
+    // Navigate to the main page
+    navigate('/store');
+  };
+
+  const handleLandingClick = () => {
+    // Navigate to the main page
+    navigate('/landing');
   };
 
   const handleLogout = () => {
@@ -63,13 +74,18 @@ const HomeDropdown = () => {
           <span className="dropdown-item">{fullName}</span>
         </li>
         <li>
-          <button className="dropdown-item" type="button" onClick={handleHomeClick}>
-            Home
+          <button className="dropdown-item" type="button" onClick={handleProfileClick}>
+            Profile
           </button>
         </li>
         <li>
-          <button className="dropdown-item" type="button">
+          <button className="dropdown-item" type="button"  onClick={handleStoreClick}>
             Store
+          </button>
+        </li>
+        <li>
+          <button className="dropdown-item" type="button"  onClick={handleLandingClick}>
+            Main
           </button>
         </li>
         <li>

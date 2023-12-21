@@ -31,13 +31,17 @@ const ProfileDropdown = () => {
     }
   }, []);
 
-  const handleProfileClick = () => {
+  const handleMainClick = () => {
     // Navigate to the profile page
-    navigate("/profile");
+    navigate("/main");
   };
   const handleStoreClick = () => {
     // Navigate to the profile page
     navigate("/store");
+  };
+  const handleLandingClick = () => {
+    // Navigate to the profile page
+    navigate("/landing");
   };
 
   const handleLogout = () => {
@@ -75,15 +79,21 @@ const ProfileDropdown = () => {
           <button
             className="dropdown-item"
             type="button"
-            onClick={handleProfileClick}
+            onClick={handleMainClick}
           >
-            Profile
+            Main
           </button>
         </li>
         <li>
           <button className="dropdown-item" type="button"
           onClick={handleStoreClick}>
             Store
+          </button>
+        </li>
+        <li>
+          <button className="dropdown-item" type="button"
+          onClick={handleLandingClick}>
+            Home
           </button>
         </li>
         <li>

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-const StoreDropdown = () => {
+const LandingDropdown = () => {
   const navigate = useNavigate();
   const [fullName, setFullName] = useState('');
 
@@ -33,11 +33,12 @@ const StoreDropdown = () => {
   const handleProfileClick = () => {
     // Navigate to the main page
     navigate('/profile');
-  };  
-  const handleLandingClick = () => {
-    // Navigate to the main page
-    navigate('/landing');
   };
+  const handleStoreClick = () => {
+    // Navigate to the main page
+    navigate('/store');
+  };
+
   const handleLogout = () => {
     // Clear the logged-in user's email from local storage
     localStorage.removeItem('loggedInUserEmail');
@@ -78,8 +79,8 @@ const StoreDropdown = () => {
           </button>
         </li>
         <li>
-          <button className="dropdown-item" type="button" onClick={handleLandingClick}>
-            Main
+          <button className="dropdown-item" type="button" onClick={handleStoreClick}>
+            Store
           </button>
         </li>
         <li>
@@ -92,4 +93,4 @@ const StoreDropdown = () => {
   );
 };
 
-export default StoreDropdown;
+export default LandingDropdown;
