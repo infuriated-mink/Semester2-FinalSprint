@@ -41,7 +41,7 @@ const ProfileDropdown = () => {
   };
   const handleLandingClick = () => {
     // Navigate to the profile page
-    navigate("/landing");
+    navigate("/");
   };
 
   const handleLogout = () => {

@@ -36,7 +36,7 @@ const StoreDropdown = () => {
   };  
   const handleLandingClick = () => {
     // Navigate to the main page
-    navigate('/landing');
+    navigate('/');
   };
   const handleLogout = () => {
     // Clear the logged-in user's email from local storage

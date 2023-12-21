@@ -40,7 +40,7 @@ const HomeDropdown = () => {
 
   const handleLandingClick = () => {
     // Navigate to the main page
-    navigate('/landing');
+    navigate('/');
   };
 
   const handleLogout = () => {
