@@ -30,7 +30,14 @@ const StoreDropdown = () => {
     // Navigate to the main page
     navigate('/main');
   };
-
+  const handleProfileClick = () => {
+    // Navigate to the main page
+    navigate('/profile');
+  };  
+  const handleLandingClick = () => {
+    // Navigate to the main page
+    navigate('/');
+  };
   const handleLogout = () => {
     // Clear the logged-in user's email from local storage
     localStorage.removeItem('loggedInUserEmail');
@@ -66,8 +73,13 @@ const StoreDropdown = () => {
           </button>
         </li>
         <li>
-          <button className="dropdown-item" type="button">
-            Store
+          <button className="dropdown-item" type="button" onClick={handleProfileClick}>
+            Profile
+          </button>
+        </li>
+        <li>
+          <button className="dropdown-item" type="button" onClick={handleLandingClick}>
+            Main
           </button>
         </li>
         <li>

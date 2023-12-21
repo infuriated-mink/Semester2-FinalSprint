@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import '../css/homedropdown.css'
 
-const HomeDropdown = () => {
+const LandingDropdown = () => {
   const navigate = useNavigate();
   const [fullName, setFullName] = useState('');
 
@@ -27,20 +26,17 @@ const HomeDropdown = () => {
     }
   }, []);
 
+  const handleHomeClick = () => {
+    // Navigate to the main page
+    navigate('/main');
+  };
   const handleProfileClick = () => {
     // Navigate to the main page
     navigate('/profile');
   };
-
-  
   const handleStoreClick = () => {
     // Navigate to the main page
     navigate('/store');
-  };
-
-  const handleLandingClick = () => {
-    // Navigate to the main page
-    navigate('/');
   };
 
   const handleLogout = () => {
@@ -65,13 +61,17 @@ const HomeDropdown = () => {
           alt="Profile"
           width="45px"
           height="45px"
-          margin-bottom="50px"
           className="rounded-circle me-2"
         />
       </a>
-      <ul className="dropdown-menu text-small shadow" aria-labelledby="dropdownUser1">
+      <ul className="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
         <li>
           <span className="dropdown-item">{fullName}</span>
+        </li>
+        <li>
+          <button className="dropdown-item" type="button" onClick={handleHomeClick}>
+            Home
+          </button>
         </li>
         <li>
           <button className="dropdown-item" type="button" onClick={handleProfileClick}>
@@ -79,17 +79,12 @@ const HomeDropdown = () => {
           </button>
         </li>
         <li>
-          <button className="dropdown-item" type="button"  onClick={handleStoreClick}>
+          <button className="dropdown-item" type="button" onClick={handleStoreClick}>
             Store
           </button>
         </li>
         <li>
-          <button className="dropdown-item" type="button"  onClick={handleLandingClick}>
-            Main
-          </button>
-        </li>
-        <li>
-          <button className="dropdownitemlog2" type="button" onClick={handleLogout}>
+          <button className="dropdown-item" type="button" onClick={handleLogout}>
             Logout
           </button> 
         </li>
@@ -98,4 +93,4 @@ const HomeDropdown = () => {
   );
 };
 
-export default HomeDropdown;
+export default LandingDropdown;

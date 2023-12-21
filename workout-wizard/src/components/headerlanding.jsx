@@ -1,12 +1,12 @@
 import React from "react";
 import workoutWizard from "../images/workoutwizard.png";
-import profilePic from "../images/mohammad.png";
 import fbImg from "../images/fb.png";
 import xImg from "../images/twitter.png";
 import instaImg from "../images/instagram.png";
 import youTube from "../images/youtube.png";
 import pinterest from "../images/pinterest.png";
-import StoreDropdown from "./storedropdown";    
+import LandingDropdown from "./landingdropdown";
+
 
 const Header = () => {
   return (
@@ -22,7 +22,7 @@ const Header = () => {
           it means to."
         </p>
         <div className="profile-container">
-          <StoreDropdown />
+          <LandingDropdown />
           <div className="icons-div">
             <img
               src={fbImg}

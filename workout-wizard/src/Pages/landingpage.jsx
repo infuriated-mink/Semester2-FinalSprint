@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import userData from "../data/user.json";
 import "../css/landingpage.css";
 import workoutWizard from "../images/mohammad.png";
-import Header from "../components/Header";
+import Header from "../components/headerlanding.jsx";
 
 function LandingPage() {
   // useEffect will run once when the component mounts
