@@ -14,8 +14,10 @@ const AddModalButton = () => {
     setIsModalOpen(false);
   };
 
-  // const handleClick = (e) => {
-  //   e.stopPropagation();
+  // const handleAddExercise = (newExercise) => {
+  //   // Pass the selectedDay property when adding a new exercise
+  //   onAddExercise(newExercise);
+  //   closeModal();
   // };
 
   return (
@@ -25,7 +27,11 @@ const AddModalButton = () => {
       </button>
 
       {isModalOpen && (
-        <ExerciseModal isOpen={isModalOpen} onClose={closeModal} />
+        <ExerciseModal
+          isOpen={isModalOpen}
+          onClose={closeModal}
+          // onAddExercise={handleAddExercise}
+        />
       )}
     </div>
   );

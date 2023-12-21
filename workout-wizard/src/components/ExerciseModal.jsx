@@ -1,19 +1,20 @@
 import React, { useState, useEffect } from "react";
 import $ from "jquery";
 import { Modal, Button, ButtonGroup } from "react-bootstrap";
+import CalCardSmall from "./CalCardSmall";
 
-const ExerciseModal = ({ isOpen, onClose, onAddExercise }) => {
+const ExerciseModal = ({ isOpen, onClose }) => {
   const [results, setResults] = useState([]);
   const [selectedMuscle, setSelectedMuscle] = useState("chest");
   const [level, setLevel] = useState("beginner");
   const [buildType, setBuildType] = useState(null);
   const [show, setShow] = useState(isOpen);
   const [selectedExercises, setSelectedExercises] = useState([]);
-  const [reps, setReps] = useState(0);
-  const [sets, setSets] = useState(0);
   const [selectedDay, setSelectedDay] = useState(null);
-  const [buildReps, setBuildReps] = useState(0);
-  const [buildSets, setBuildSets] = useState(0);
+  const [buildReps, setBuildReps] = useState(null);
+  const [buildSets, setBuildSets] = useState(null);
+  const [exerciseDataInModal, setExerciseDataInModal] = useState([]);
+  const [displayedWorkouts, setDisplayedWorkouts] = useState([]);
 
   const handleClose = () => {
     setShow(false);
@@ -21,25 +22,10 @@ const ExerciseModal = ({ isOpen, onClose, onAddExercise }) => {
     setLevel("beginner");
     setBuildType(null);
     setSelectedExercises([]);
-    setReps(null);
-    setSets(null);
     setSelectedDay(null);
     setBuildReps(null);
     setBuildSets(null);
     onClose();
-  };
-
-  const handleShow = () => {
-    setShow(true);
-    setSelectedMuscle("chest");
-    setLevel("beginner");
-    setBuildType(null);
-    setSelectedExercises([]);
-    setReps(null);
-    setSets(null);
-    setSelectedDay(null);
-    setBuildReps(null);
-    setBuildSets(null);
   };
 
   const muscleGroups = {
@@ -103,27 +89,75 @@ const ExerciseModal = ({ isOpen, onClose, onAddExercise }) => {
   const handleCustomizeAdd = () => {
     if (
       selectedExercises.length < 1 ||
-      reps === null ||
-      sets === null ||
+      buildReps === null ||
+      buildSets === null ||
       selectedDay === null
     ) {
       console.warn("Please fill in all fields for Customize.");
       return;
     }
 
-    // Log selected exercises with reps, sets, and selected day
-    console.log("Selected Exercises (Customize):", selectedExercises);
-    console.log("Reps (Customize):", reps);
-    console.log("Sets (Customize):", sets);
-    console.log("Selected Day:", selectedDay);
+    const newMuscleGroups = () => {
+      if (
+        selectedMuscle === "biceps" ||
+        selectedMuscle === "triceps" ||
+        selectedMuscle === "forearms"
+      ) {
+        return "Arms";
+      } else if (
+        selectedMuscle === "quadriceps" ||
+        selectedMuscle === "hamstrings" ||
+        selectedMuscle === "calves"
+      ) {
+        return "Legs";
+      } else if (selectedMuscle === "chest") {
+        return "Chest";
+      } else if (
+        selectedMuscle === "lats" ||
+        selectedMuscle === "lower_back" ||
+        selectedMuscle === "middle_back" ||
+        selectedMuscle === "traps"
+      ) {
+        return "Back";
+      } else if (selectedMuscle === "abdominals") {
+        return "Core";
+      } else {
+        return "Cardio";
+      }
 
-    // Add exercises to main page
-    onAddExercise(selectedExercises, reps, sets, selectedDay);
+      // You might want to provide a default value or handle other cases here
+      return newMuscleGroups;
+    };
+
+    // Save the selected exercises to local storage
+    const exerciseData = {
+      selectedMuscle: newMuscleGroups(), // Call the function to get the value
+      exercises: selectedExercises,
+      buildReps,
+      buildSets,
+      selectedDay,
+    };
+
+    console.log(exerciseData);
+
+    // Retrieve existing data from local storage
+    const existingData = JSON.parse(localStorage.getItem("exerciseData")) || [];
+
+    // Save the new data to local storage
+    localStorage.setItem(
+      "exerciseData",
+      JSON.stringify([...existingData, exerciseData])
+    );
+
+    // Update the state in ExerciseModal for immediate display in CalCardSmall
+    setExerciseDataInModal((prevData) => [...prevData, exerciseData]);
 
     // Reset selections
     handleClose();
+    window.location.reload();
   };
 
+  /**************************************************************/
   const handleBuildAdd = () => {
     if (
       selectedExercises.length !== 4 ||
@@ -135,20 +169,77 @@ const ExerciseModal = ({ isOpen, onClose, onAddExercise }) => {
       return;
     }
 
-    // Log selected exercises for Build
-    console.log("Selected Exercises (Build):", selectedExercises);
-    console.log("Reps (Build):", buildReps);
-    console.log("Sets (Build):", buildSets);
-    console.log("Selected Day:", selectedDay);
+    const newMuscleGroups = () => {
+      if (
+        selectedMuscle === "biceps" ||
+        selectedMuscle === "triceps" ||
+        selectedMuscle === "forearms"
+      ) {
+        return "Arms";
+      } else if (
+        selectedMuscle === "quadriceps" ||
+        selectedMuscle === "hamstrings" ||
+        selectedMuscle === "calves"
+      ) {
+        return "Legs";
+      } else if (selectedMuscle === "chest") {
+        return "Chest";
+      } else if (
+        selectedMuscle === "lats" ||
+        selectedMuscle === "lower_back" ||
+        selectedMuscle === "middle_back" ||
+        selectedMuscle === "traps"
+      ) {
+        return "Back";
+      } else if (selectedMuscle === "abdominals") {
+        return "Core";
+      } else {
+        return "Cardio";
+      }
 
-    // Add exercises to main page
-    onAddExercise(selectedExercises, buildReps, buildSets, selectedDay);
+      // You might want to provide a default value or handle other cases here
+      return newMuscleGroups;
+    };
+
+    // Save the selected exercises to local storage
+    const exerciseData = {
+      selectedMuscle: newMuscleGroups(), // Call the function to get the value
+      exercises: selectedExercises,
+      buildReps,
+      buildSets,
+      selectedDay,
+    };
+
+    // Arms: ["biceps", "triceps", "forearms"],
+    // Legs: ["quadriceps", "hamstrings", "calves"],
+    // Chest: ["chest"],
+    // Back: ["lats", "lower_back", "middle_back", "traps"],
+    // Core: ["abdominals"],
+    // Cardio: ["cardio"],
+
+    console.log(exerciseData);
+
+    // Retrieve existing data from local storage
+    const existingData = JSON.parse(localStorage.getItem("exerciseData")) || [];
+
+    // Save the new data to local storage
+    localStorage.setItem(
+      "exerciseData",
+      JSON.stringify([...existingData, exerciseData])
+    );
+
+    // Update the state in ExerciseModal for immediate display in CalCardSmall
+    setExerciseDataInModal((prevData) => [...prevData, exerciseData]);
+
+    // Call function here to display exerciseDataInModal taking the selectedMuscle and passing it via the CalCardSmall text prop
+
+    displayWorkout();
 
     // Reset selections
     handleClose();
+    console.log(exerciseData);
+    window.location.reload();
   };
-
-  //////////////
 
   const handleCheckboxChange = (exercise) => {
     if (selectedExercises.includes(exercise)) {
@@ -160,11 +251,35 @@ const ExerciseModal = ({ isOpen, onClose, onAddExercise }) => {
     }
   };
 
+  ///////////////////
+  function renderCalCardSmallComponents(workouts) {
+    return workouts.map((workout, index) => (
+      <CalCardSmall
+        key={index}
+        text={workout.muscle}
+        color={"lightgray"} // Replace with logic to map the selected muscle to its color
+      />
+    ));
+  }
+  ///////////////////
+
+  ///////////////
+  const displayWorkout = () => {
+    //
+    // Extract the muscle information from exerciseDataInModal and set to state
+    const workoutsToDisplay = exerciseDataInModal.map((exerciseData) => ({
+      muscle: exerciseData.selectedMuscle,
+      selectedDay: exerciseData.selectedDay,
+    }));
+    setDisplayedWorkouts(workoutsToDisplay);
+  };
+  /////////////////////////////////////////////////////////////
+
   return (
     <div>
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Exercise Modal</Modal.Title>
+          <Modal.Title>Add Exercise</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <ButtonGroup>
@@ -190,6 +305,7 @@ const ExerciseModal = ({ isOpen, onClose, onAddExercise }) => {
               value={selectedDay}
               onChange={(e) => setSelectedDay(e.target.value)}
             >
+              <option value="--">--</option>
               <option value="Monday">Monday</option>
               <option value="Tuesday">Tuesday</option>
               <option value="Wednesday">Wednesday</option>
@@ -265,10 +381,10 @@ const ExerciseModal = ({ isOpen, onClose, onAddExercise }) => {
                 <label>Reps: </label>
                 <input
                   type="number"
-                  value={buildType === "customize" ? reps : buildReps}
+                  value={buildType === "customize" ? buildReps : buildReps}
                   onChange={(e) =>
                     buildType === "customize"
-                      ? setReps(e.target.value)
+                      ? setBuildReps(e.target.value)
                       : setBuildReps(e.target.value)
                   }
                 />
@@ -278,10 +394,10 @@ const ExerciseModal = ({ isOpen, onClose, onAddExercise }) => {
                 <label>Sets: </label>
                 <input
                   type="number"
-                  value={buildType === "customize" ? sets : buildSets}
+                  value={buildType === "customize" ? buildSets : buildSets}
                   onChange={(e) =>
                     buildType === "customize"
-                      ? setSets(e.target.value)
+                      ? setBuildSets(e.target.value)
                       : setBuildSets(e.target.value)
                   }
                 />
@@ -306,6 +422,7 @@ const ExerciseModal = ({ isOpen, onClose, onAddExercise }) => {
           </Button>
         </Modal.Footer>
       </Modal>
+      {renderCalCardSmallComponents(displayedWorkouts)}
     </div>
   );
 };
