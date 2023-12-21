@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import '../css/login.css';
+import loginWizard from '../images/buffWizard.png';
 
 export default function Login() {
   const navigate = useNavigate();
@@ -38,22 +39,27 @@ export default function Login() {
   };
 
   return (
-    <div className="Auth-form-container">
-      <form className="Auth-form">
-        <div className="Auth-form-content">
-          <div className="Auth-form-title"></div>
-          <div className="text-center">
+    <div className="form-container">
+      <form className="Authform">
+        <div className="form-content">
+        <img 
+           src={loginWizard} 
+           alt="workout wizard img"
+           className="logo-img1" 
+          />
+          <div className="formtitle"></div>
+          <div className="textcenter">
             Don't have a profile?{" "}
             <Link to="/signup" className="link-primary">
               Sign Up!
             </Link>
           </div>
-          <div className="email">
+          <div className="mail">
             <label>Email Address:</label></div>
             <div>
             <input
               type="email"
-              className="form-control"
+              className="formcontrol1"
               placeholder="Enter email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
@@ -64,13 +70,13 @@ export default function Login() {
             <div>
             <input
               type="password"
-              className="form-control"
+              className="formcontrol2"
               placeholder="Enter password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
           </div>
-          <div className="d-grid gap-2">
+          <div className="button1">
             <button
               type="button"
               className="but"
@@ -79,7 +85,7 @@ export default function Login() {
               Log In
             </button>
           </div>
-          <p className="text-center mt-2">
+          <p className="forgotpassword1">
             {loginError && (
               <span className="error-message">{loginError}</span>
             )}

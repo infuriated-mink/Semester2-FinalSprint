@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import '../css/signup.css';
+import signupWizard from '../images/SignUpWizard.png';
 
 const Signup = () => {
   const navigate = useNavigate();
@@ -40,49 +41,54 @@ const Signup = () => {
 
   return (
     <div className="Auth-form-container">
-      <form className="Auth-form">
+      <form className="Auth-form1">
         <div className="Auth-form-content">
-          <h3 className="Auth-form-title">Sign Up</h3>
-          <div className="text-center">
+        <img 
+           src={signupWizard} 
+           alt="workout wizard img"
+           className="logo-img2" 
+          />
+          <h3 className="Auth-form-title"></h3>
+          <div className="textcenter2">
             Already registered?{" "}
             <Link to="/login" className="link-primary">
               Sign In
             </Link>
           </div>
-          <div className="form-group mt-3">
+          <div className="name">
             <label>Full Name:</label>
             <input
               type="text"
-              className="form-control mt-1"
+              className="formcontrol5"
               placeholder="e.g Jane Doe"
               value={fullName}
               onChange={(e) => setFullName(e.target.value)}
             />
           </div>
-          <div className="form-group mt-3">
+          <div className="mails">
             <label>Email Address:</label>
             <input
               type="email"
-              className="form-control mt-1"
+              className="formcontrol3"
               placeholder="Email Address"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
           </div>
-          <div className="form-group mt-3">
+          <div className="passwords">
             <label>Password:</label>
             <input
               type="password"
-              className="form-control mt-1"
+              className="formcontrol4"
               placeholder="Password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
           </div>
-          <div className="butt">
+          <div className="button2">
             <button
               type="button"
-              className="btn btn-primary1"
+              className="but2"
               onClick={handleSignup}
             >
               Submit
